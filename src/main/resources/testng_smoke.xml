@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="Subscription Automation Test" >
+  <test name="Subscription Test Cases" >
+    <classes>
+       <class name="com.subscription.qa.pages.SM01_SubscriptionSearchEngine_StepDefinition"></class>
+       <class name="com.subscription.qa.pages.SM02_Hyperlinks_StepDefinition"></class>
+    </classes>
+  </test>
+</suite>
