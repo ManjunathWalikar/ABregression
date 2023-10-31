@@ -120,6 +120,16 @@ public class UsFundDetailsPage extends TestBase {
 		System.out.println(FD_NAV);
 		Assert.assertTrue(FD_NAV.contains(FF_NAV));
 	}
+	
+	public void validateETFNAV(String FF_NAV)
+	{
+		help.wait_element_tobe_displayed(get_NAV_value());
+		String FD_NAV = get_NAV_value().getText();
+		System.out.println(FF_NAV);
+		System.out.println(FD_NAV);
+		Assert.assertTrue(FD_NAV.contains(FF_NAV));
+	}
+	
 	public void validateAsOfDate(String FFdate)
 	{
 		help.wait_element_tobe_displayed(getAsOf());

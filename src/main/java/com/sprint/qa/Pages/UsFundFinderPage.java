@@ -22,6 +22,7 @@ public class UsFundFinderPage extends TestBase{
 	public static String Daily_Pricing_and_Yields = "//span[@title='Daily Pricing and Yields']";
 	public static String allFunds = "//tbody[contains(@class,'Table_table-rows-container')]//a";
 	public static String AF_OF_DATE = "//p[contains(@class,'asOf')]";
+	public static String ETFFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'ETFs')]";
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
 	private WebElement MutualFund;
@@ -40,7 +41,14 @@ public class UsFundFinderPage extends TestBase{
 		WebElement dpy =help.get_element(Daily_Pricing_and_Yields);
 		scrollintoview(dpy);
 		dpy.click();
-//		ele.click();
+	}
+	
+	public void clickOnETFFund() {
+		WebElement etf = help.get_element(ETFFundVehicle);
+		scrollandclick(etf);
+		WebElement dpy =help.get_element(Daily_Pricing_and_Yields);
+		scrollintoview(dpy);
+		dpy.click();
 	}
 	
 	
@@ -56,6 +64,11 @@ public class UsFundFinderPage extends TestBase{
 	public String getNAVdata(String fundName)
 	{
 		return help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]/../following-sibling::p[2]").getText();
+	}
+	
+	public String getETFNAVdata(String fundName)
+	{
+		return help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]/../following-sibling::p[3]").getText();
 	}
 	
 	/**
@@ -113,6 +126,37 @@ public class UsFundFinderPage extends TestBase{
 			// Literature Tab
 			page.us_fund_details_page.clickOnLiterature();
 			driver.close();
+	}
+	
+	public void validateETFFunds()
+	{
+		String as_Of_date = getAsOfDate();
+		String parent = driver.getWindowHandle();
+		List<WebElement> funds = help.get_elements(allFunds);
+		for (WebElement fund : funds) {
+			help.switchWindow(parent);
+			scrollintoview(fund);
+			String fundName = fund.getText();
+			String NAV_value = getETFNAVdata(fundName);
+			fund.click();
+			help.switchWindowFDpage(fundName);
+			page.us_fund_details_page.validateAsOfDate(as_Of_date);
+			page.us_fund_details_page.validateETFNAV(NAV_value);
+
+
+			page.us_fund_details_page.clickOnOverview();
+			page.us_fund_details_page.verifyKeyFacts();
+			
+			// Performance Tab
+			page.us_fund_details_page.clickOnPerformance();
+			
+			// Holdings Tab
+			page.us_fund_details_page.clickOnHoldings();
+			
+			// Literature Tab
+			page.us_fund_details_page.clickOnLiterature();
+			driver.close();
+		}
 	}
 	
 

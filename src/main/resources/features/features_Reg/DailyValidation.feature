@@ -29,3 +29,18 @@ Feature: Daily Production validaton
       #|United States|AB All Market Real Return Portfolio|
       #|United States|AB All Market Total Return Portfolio|
       #|United States|AB Arizona Portfolio|
+
+      
+      
+  @ETF
+  Scenario Outline: Prod Validation for US
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on ETF Funds
+    Then Verify Each ETF Funds
+
+    Examples: 
+      | Country  |
+      |United States|

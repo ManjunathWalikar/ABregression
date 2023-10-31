@@ -99,9 +99,15 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 		po.us_fund_finder_page.validateIndividualFunds(fundName);
 	}
 
+	@When("I click on ETF Funds")
+	public void i_click_on_etf_funds() {
+	    po.us_fund_finder_page.clickOnETFFund();
+	}
 	
-	
-	
+	@Then("Verify Each ETF Funds")
+	public void verify_each_etf_funds() {
+	    po.us_fund_finder_page.validateETFFunds();
+	}
 	
 	
 	
