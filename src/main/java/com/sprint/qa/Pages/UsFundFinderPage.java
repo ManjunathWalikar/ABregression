@@ -93,8 +93,25 @@ public class UsFundFinderPage extends TestBase{
 			help.switchWindowFDpage(FundName);
 			page.us_fund_details_page.validateAsOfDate(as_Of_date);
 			page.us_fund_details_page.validateNAV(NAV_value);
+			// Over View Tab
 			page.us_fund_details_page.clickOnOverview();
+			page.us_fund_details_page.verifyKeyFacts();
+			
+			// Performance Tab
 			page.us_fund_details_page.clickOnPerformance();
+			page.us_fund_details_page.verifyDailyAsOfNavValue(NAV_value);
+			page.us_fund_details_page.verifyHypotheticalGrowth();
+//			page.us_fund_details_page.clickOnMonthEndAsOf();
+//			page.us_fund_details_page.clickOnQuarterEndAsOf();
+			
+			// Yields and Distribution Tab
+			page.us_fund_details_page.clickOnYields();
+			
+			// Holdings Tab
+			page.us_fund_details_page.clickOnHoldings();
+			
+			// Literature Tab
+			page.us_fund_details_page.clickOnLiterature();
 			driver.close();
 	}
 	
