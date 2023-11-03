@@ -28,7 +28,7 @@ public class UsFundDetailsPage extends TestBase {
 	public static String MONTH_END_AS_OF = "//span[contains(@title,'Month End As of')]";
 	public static String QUARTER_END_AS_OF = "//span[contains(@title,'Quarter End As of')]]";
 	public static String KEY_FACTS = "//h3[contains(.,'Key Facts')]";
-	public static String DAILY_AS_OF_NAV = "(//td[@data-testid=\"tableRow-0-data-0-\"])[1]";
+	public static String DAILY_AS_OF_NAV = "(//td[@data-testid='tableRow-0-data-0-'])[1]";
 	public static String HYPOTHETICALGROWTH_1Month = "//div[contains(@class,'HypotheticalGrowth')]//span[@title='1 Month']";
 	public static String HYPOTHETICALGROWTH_6Months = "//div[contains(@class,'HypotheticalGrowth')]//span[@title='6 Months']";
 	public static String HYPOTHETICALGROWTH_1YEAR = "//div[contains(@class,'HypotheticalGrowth')]//span[@title='1 Year']";
@@ -36,6 +36,17 @@ public class UsFundDetailsPage extends TestBase {
 	public static String HYPOTHETICALGROWTH_5YEARs = "//div[contains(@class,'HypotheticalGrowth')]//span[@title='5 Years']";
 	public static String HYPOTHETICALGROWTH_MAX_RANGE = "//div[contains(@class,'HypotheticalGrowth')]//span[@title='Max Range']";
 	public static String HypotheticalChart = "//div[contains(@class,'HypotheticalGrowth')]//div[contains(@id,'highchart')]";
+	public static String ETF_PREMIUM_CHART = "//div[contains(@class,'PremiumDiscount_chart-container')]//div[contains(@id,'highcharts')]";
+	public static String PREVIOUS_QUARTER_CHART = "//span[contains(text(),'Previous Quarter')]";
+	public static String PREVIOUS_YEAR_CHART = "//span[text()='Previous Year']";
+	public static String PREVIOUS_YEAR_TO_DATE_CHART = "//span[text()='Previous Year To Date']";
+	public static String ETF_NAV_HISTORY_CHART = "//div[contains(@class,'NavHistory_chart-container')]//div[contains(@id,'highcharts')]";
+	public static String NAVHISTORY_1MONTH = "//span[@title='1 Month']";
+	public static String NAVHISTORY_6MONTHS = "//span[@title='6 Months']";
+	public static String NAVHISTORY_1YEAR = "//span[@title='1 Year']";
+	public static String NAVHISTORY_MAXRANGE = "//span[@title='Max Range']";
+	
+	
 	
 	@FindBy(xpath = "//a[@id='jnOverview']")
 	private WebElement OverviewLink;
@@ -110,6 +121,17 @@ public class UsFundDetailsPage extends TestBase {
 		return help.get_element(HypotheticalChart);
 	}
 	
+	public WebElement getEtfPremiumChart()
+	{
+		return help.get_element(ETF_PREMIUM_CHART);
+	}
+	
+	public WebElement getEtfNavHistoryChart()
+	{
+		return help.get_element(ETF_NAV_HISTORY_CHART);
+	}
+	
+	
 	/**
 	 * Common methods 
 	 */
@@ -182,30 +204,114 @@ public class UsFundDetailsPage extends TestBase {
 	
 	public void verifyHypotheticalGrowth()
 	{
-		try {
-			help.get_element(HYPOTHETICALGROWTH_1Month).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
-			help.get_element(HYPOTHETICALGROWTH_6Months).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
-			help.get_element(HYPOTHETICALGROWTH_1YEAR).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
-			help.get_element(HYPOTHETICALGROWTH_3YEARs).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
-			help.get_element(HYPOTHETICALGROWTH_5YEARs).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
-			help.get_element(HYPOTHETICALGROWTH_MAX_RANGE).click();
-//			scrollintoview(getHypotheticalChart());
-			Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			try {
+				help.get_element(HYPOTHETICALGROWTH_1Month).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of 1Month is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(HYPOTHETICALGROWTH_6Months).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of 6Month is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(HYPOTHETICALGROWTH_1YEAR).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of 1Year is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(HYPOTHETICALGROWTH_3YEARs).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of 3Year is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(HYPOTHETICALGROWTH_5YEARs).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of 5Year is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(HYPOTHETICALGROWTH_MAX_RANGE).click();
+				Assert.assertTrue(getHypotheticalChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("Hypothetical Graph of MAX Range is not Displayed");
+				e.printStackTrace();
+			}
 			
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
+	}
+	
+	public void verifyETFPreviousYearChart()
+	{
+			try {
+				help.get_element(PREVIOUS_QUARTER_CHART).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfPremiumChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("PREVIOUS_QUARTER_CHART is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(PREVIOUS_YEAR_TO_DATE_CHART).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfPremiumChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("PREVIOUS_YEAR_TO_DATE_CHART is not Displayed");
+				e.printStackTrace();
+			}
+			try {
+				help.wait_element_tobe_clickable(PREVIOUS_YEAR_CHART);
+				help.get_element(PREVIOUS_YEAR_CHART).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfPremiumChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("PREVIOUS_YEAR_CHART is not Displayed");
+				e.printStackTrace();
+			}
+	}
+	
+	public void verifyETFNavHistoryChart()
+	{
+			try {
+				help.get_element(NAVHISTORY_1MONTH).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfNavHistoryChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("NAVHISTORY_1MONTH is not available");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(NAVHISTORY_6MONTHS).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfNavHistoryChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("NAVHISTORY_6MONTHS is not available");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(NAVHISTORY_1YEAR).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfNavHistoryChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("NAVHISTORY_1YEAR is not available");
+				e.printStackTrace();
+			}
+			try {
+				help.get_element(NAVHISTORY_MAXRANGE).click();
+				Thread.sleep(1000);
+				Assert.assertTrue(getEtfNavHistoryChart().isDisplayed());
+			} catch (Exception e) {
+				System.out.println("NAVHISTORY_MAXRANGE is not available");
+				e.printStackTrace();
+			}
 	}
 	
 	public void clickOnYields()

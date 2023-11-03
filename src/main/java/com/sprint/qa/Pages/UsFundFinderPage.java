@@ -149,7 +149,22 @@ public class UsFundFinderPage extends TestBase{
 			
 			// Performance Tab
 			page.us_fund_details_page.clickOnPerformance();
+			page.us_fund_details_page.verifyDailyAsOfNavValue(NAV_value);
+			try {
+				page.us_fund_details_page.verifyETFPreviousYearChart();
+			} catch (Exception e) {
+				System.out.println(fundName+" doesn't have Previous Year chart");
+			}
 			
+			page.us_fund_details_page.verifyETFNavHistoryChart();
+			
+			// Yields and Distribution Tab
+			try {
+				page.us_fund_details_page.clickOnYields();
+			} catch (Exception e) {
+				System.out.println(fundName+" doesn't have Yield and Distribution");
+			}
+						
 			// Holdings Tab
 			page.us_fund_details_page.clickOnHoldings();
 			
