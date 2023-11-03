@@ -114,8 +114,7 @@ public class UsFundFinderPage extends TestBase{
 			page.us_fund_details_page.clickOnPerformance();
 			page.us_fund_details_page.verifyDailyAsOfNavValue(NAV_value);
 			page.us_fund_details_page.verifyHypotheticalGrowth();
-//			page.us_fund_details_page.clickOnMonthEndAsOf();
-//			page.us_fund_details_page.clickOnQuarterEndAsOf();
+			page.us_fund_details_page.verifyNavHistoryChart();
 			
 			// Yields and Distribution Tab
 			page.us_fund_details_page.clickOnYields();
