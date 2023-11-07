@@ -112,7 +112,7 @@ public class TestBase {
         chromeOptions.addArguments("--proxy-bypass-list=*");
         chromeOptions.addArguments("--start-maximized");
 //        chromeOptions.addArguments("--headless");
-        chromeOptions.addArguments("--disable-gpu");
+//        chromeOptions.addArguments("--disable-gpu");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--ignore-certificate-errors");

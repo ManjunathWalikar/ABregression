@@ -44,3 +44,59 @@ Feature: Daily Production validaton
     Examples: 
       | Country  |
       |United States|
+      
+      
+  @FF
+  Scenario Outline: US Fund Finder Page Validation
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    And I select AssetClass DD
+    And I select Equities in AssetClass DD
+    Then Verify the Funds are Equities
+    And I click on Reset Filters
+    And I select AssetClass DD
+    And I select Fixed Income in AssetClass DD
+    Then Verify the Funds are Fixed Income
+    And I click on Reset Filters
+    And I select AssetClass DD
+    And I select Multi Asset in AssetClass DD
+    Then Verify the Funds are Multi Asset
+    And I click on Reset Filters
+    And I select AssetClass DD
+    And I select Alternatives in AssetClass DD
+    Then Verify the Funds are Alternatives
+    And I click on Reset Filters
+    
+
+    Examples: 
+      | Country  |
+      |United States|
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.sprint.qa.base.PageObjects;
 import com.sprint.qa.base.TestBase;
@@ -23,6 +24,17 @@ public class UsFundFinderPage extends TestBase{
 	public static String allFunds = "//tbody[contains(@class,'Table_table-rows-container')]//a";
 	public static String AF_OF_DATE = "//p[contains(@class,'asOf')]";
 	public static String ETFFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'ETFs')]";
+	public static String ASSETCLASSDD = "//div[contains(text(),'Asset Class')]";
+	public static String EQUITIES = "//span[contains(text(),'Equities')]";
+	public static String FIXED_INCOME = "//span[contains(text(),'Fixed Income')]";
+	public static String MULTI_ASSET = "//span[contains(text(),'Multi-Asset')]";
+	public static String ALTERNATIVES = "//span[contains(text(),'Alternatives')]";
+	public static String RESET_FILTERS_BTN = "//button[contains(text(),'Reset Filters')]";
+	public static String TICKER_VERIFICATION = "//span[contains(@class,'FundNameCell_eyebrow-text')]";
+	public static String FundLoad = "//div[contains(@class,'Performance_performance')]";
+	
+	
+	
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
 	private WebElement MutualFund;
@@ -30,9 +42,135 @@ public class UsFundFinderPage extends TestBase{
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'SMAs')]")
 	private WebElement SMAS;
 	
+	public WebElement getAssetClassDD()
+	{
+		return help.get_element(ASSETCLASSDD);
+	}
+	public WebElement getEquities() {
+		return help.get_element(EQUITIES);
+	}
+	public WebElement getFixedIncome()
+	{
+		return help.get_element(FIXED_INCOME);
+	}
+	public WebElement getMultiAsset()
+	{
+		return help.get_element(MULTI_ASSET);
+	}
+	public WebElement getAlternatives()
+	{
+		return help.get_element(ALTERNATIVES);
+	}
+	public WebElement getResetFilter()
+	{
+		return help.get_element(RESET_FILTERS_BTN);
+	}
+	public List<WebElement> getTickerVerification()
+	{
+		return help.get_elements(TICKER_VERIFICATION);
+	}
+	public WebElement getFundLoad()
+	{
+		return help.get_element(FundLoad);
+	}
+	
 	public UsFundFinderPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
+	}
+	
+	public void clickOnAssetClassDD()
+	{
+		help.wait_element_tobe_clickable(getAssetClassDD());
+		getAssetClassDD().click();
+	}
+	public void selectEquitiesFromDD()
+	{
+		help.wait_element_tobe_clickable(getEquities());
+		getEquities().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void selectFixedIncomeFromDD()
+	{
+		help.wait_element_tobe_clickable(getFixedIncome());
+		getFixedIncome().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void selectMultiAssetFromDD()
+	{
+		help.wait_element_tobe_clickable(getMultiAsset());
+		getMultiAsset().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void selectAlternativesFromDD()
+	{
+		help.wait_element_tobe_clickable(getAlternatives());
+		getAlternatives().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public void clickOnResetFilters() {
+		getResetFilter().click();
+	}
+	
+	public void vefifyEquities()
+	{
+		wait_element_tobe_displayed(getFundLoad());
+		List<WebElement> header = getTickerVerification();
+		for (WebElement head : header) {
+			String assetClass = head.getText();
+			Assert.assertTrue(assetClass.contains("EQUITIES"));
+		}
+	}
+	public void vefifyFIXED_INCOME()
+	{
+		wait_element_tobe_displayed(getFundLoad());
+		List<WebElement> header = getTickerVerification();
+		for (WebElement head : header) {
+			String assetClass = head.getText();	
+			System.out.println(assetClass);
+			Assert.assertTrue(assetClass.contains("FIXED INCOME"));
+		}
+	}
+	public void vefifyMULTI_ASSET()
+	{
+		wait_element_tobe_displayed(getFundLoad());
+		List<WebElement> header = getTickerVerification();
+		for (WebElement head : header) {
+			String assetClass = head.getText();
+			System.out.println(assetClass);
+			Assert.assertTrue(assetClass.contains("MULTI-ASSET"));
+		}
+	}
+	public void vefifyALTERNATIVES()
+	{
+		wait_element_tobe_displayed(getFundLoad());
+		List<WebElement> header = getTickerVerification();
+		for (WebElement head : header) {
+			String assetClass = head.getText();
+			Assert.assertTrue(assetClass.contains("ALTERNATIVES"));
+		}
 	}
 	
 	public void clickOnMutualFund() {
