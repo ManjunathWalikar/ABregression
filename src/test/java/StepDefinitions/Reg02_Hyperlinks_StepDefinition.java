@@ -46,7 +46,6 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 		try {
 			initialization();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -150,30 +149,59 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	@Then("^Verify the Funds are Equities$")
 	public void Verify_the_Funds_are_Equities()
 	{
-		po.us_fund_finder_page.vefifyEquities();
+		po.us_fund_finder_page.verifyEquities();
 	}
 	
 	@Then("^Verify the Funds are Fixed Income$")
 	public void Verify_the_Funds_are_Fixed_Income()
 	{
-		po.us_fund_finder_page.vefifyFIXED_INCOME();
+		po.us_fund_finder_page.verifyFIXED_INCOME();
 	}
 	
 	@Then("^Verify the Funds are Multi Asset$")
 	public void Verify_the_Funds_are_Multi_Asset()
 	{
-		po.us_fund_finder_page.vefifyMULTI_ASSET();
+		po.us_fund_finder_page.verifyMULTI_ASSET();
 	}
 	
 	@Then("^Verify the Funds are Alternatives$")
 	public void Verify_the_Funds_are_Alternatives()
 	{
-		po.us_fund_finder_page.vefifyALTERNATIVES();
+		po.us_fund_finder_page.verifyALTERNATIVES();
+	}
+	@And("^I select Styles DD$")
+	public void I_select_Styles_DD()
+	{
+		po.us_fund_finder_page.clickOnStylesDD();
+	}
+	@And("^I select Equity Core in Styles DD$")
+	public void select_Equity_Core_in_Styles_DD()
+	{
+		po.us_fund_finder_page.selectEquityCoreFromDD();
 	}
 	
+	@Then("^Verify Equity Core Funds$")
+	public void Verify_Equity_Core_Funds()
+	{
+		po.us_fund_finder_page.verifyEquityCoreandGlobal();
+	}
 	
+	@And("^I select Region DD$")
+	public void I_select_Region_DD()
+	{
+		po.us_fund_finder_page.clickOnRegionDD();
+	}
+	@And("^I select Global in Region DD$")
+	public void select_Global_in_Region_DD()
+	{
+		po.us_fund_finder_page.selectGlobalFromRegionDD();
+	}
 	
-	
+	@Then("^Verify Global Funds Count$")
+	public void Verify_Global_Funds_Counts()
+	{
+		po.us_fund_finder_page.verifyEquityCoreandGlobal();
+	}
 	
 	
 	

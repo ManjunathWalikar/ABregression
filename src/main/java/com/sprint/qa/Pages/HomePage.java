@@ -17,6 +17,7 @@ public class HomePage extends TestBase {
 	public static String INDIVIDUAL_INVESTOR = "//button[contains(text(),'Individual Investors')]";
 	public static String INVESTMENTS = "//span[contains(text(),'Investments ')]";
 	public static String PRODUCTS = "//div[contains(@class,'header')]//a[contains(text(),'Products')]";
+	public static String AcceptCookies = "//button[@id='onetrust-accept-btn-handler']";
 	
 	public HomePage(WebDriver driver)
 	{
@@ -43,10 +44,16 @@ public class HomePage extends TestBase {
 		WebElement ele = help.get_element(PRODUCTS);
 		return ele;
 	}
+	public WebElement getAcceptCookies()
+	{
+		return help.get_element(AcceptCookies);
+	}
 	
 	public void navigateToGivenSite(String country)
 	{
 		getChooseYourSite().click();
+		wait_element_tobe_displayed(getAcceptCookies());
+		getAcceptCookies().click();
 		WebElement countrySpecific = help.get_element("//span[contains(text(),'"+country+"')]");
 		try {
 			countrySpecific.click();

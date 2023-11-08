@@ -18,6 +18,7 @@ import com.sprint.qa.helper.LoggerHelper;
 public class UsFundFinderPage extends TestBase{
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	Helper help =new Helper();
+	final static String EQUITY_CORE_and_GLOBAL = "11";
 	
 	public static String MutualFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]";
 	public static String Daily_Pricing_and_Yields = "//span[@title='Daily Pricing and Yields']";
@@ -32,8 +33,12 @@ public class UsFundFinderPage extends TestBase{
 	public static String RESET_FILTERS_BTN = "//button[contains(text(),'Reset Filters')]";
 	public static String TICKER_VERIFICATION = "//span[contains(@class,'FundNameCell_eyebrow-text')]";
 	public static String FundLoad = "//div[contains(@class,'Performance_performance')]";
-	
-	
+	public static String SHOW_RESULTS = "//span[contains(@class,'ShowResults_desktop')]//strong";
+	public static String STYLES_DD = "//div[contains(text(),'Styles')]";
+	public static String Equity_Core_DD = "//span[contains(text(),'Equity: Core')]";
+	public static String REGION_DD = "//div[contains(text(),'Region')]";
+	public static String Global = "//span[contains(text(),'Global')]";
+	public static String SHARECLASS_DD = "//div[contains(text(),'Advisor')]|//div[contains(text(),'Share Class')]";
 	
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
@@ -73,16 +78,70 @@ public class UsFundFinderPage extends TestBase{
 	{
 		return help.get_element(FundLoad);
 	}
+	public WebElement showResults()
+	{
+		return help.get_element(SHOW_RESULTS);
+	}
+	public WebElement getStylesDD()
+	{
+		return help.get_element(STYLES_DD);
+	}
+	public WebElement getEquityCoreDD() {
+		return help.get_element(Equity_Core_DD);
+	}
+	public WebElement getRegionDD() {
+		return help.get_element(REGION_DD);
+	}
+	public WebElement getGlobalFromRegionDD() {
+		return help.get_element(Global);
+	}
 	
 	public UsFundFinderPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
 	}
 	
+	public void verifyEquityCoreandGlobal()
+	{
+		String equityCore = showResults().getText();
+		Assert.assertTrue(equityCore.equals(EQUITY_CORE_and_GLOBAL));
+	}
 	public void clickOnAssetClassDD()
 	{
 		help.wait_element_tobe_clickable(getAssetClassDD());
 		getAssetClassDD().click();
+	}
+	public void clickOnStylesDD()
+	{
+		help.wait_element_tobe_clickable(getStylesDD());
+		getStylesDD().click();
+	}
+	public void clickOnRegionDD()
+	{
+		help.wait_element_tobe_clickable(getRegionDD());
+		getRegionDD().click();
+	}
+	public void selectGlobalFromRegionDD()
+	{
+		help.wait_element_tobe_clickable(getGlobalFromRegionDD());
+		getGlobalFromRegionDD().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void selectEquityCoreFromDD()
+	{
+		help.wait_element_tobe_clickable(getEquityCoreDD());
+		getEquityCoreDD().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void selectEquitiesFromDD()
 	{
@@ -134,7 +193,7 @@ public class UsFundFinderPage extends TestBase{
 		getResetFilter().click();
 	}
 	
-	public void vefifyEquities()
+	public void verifyEquities()
 	{
 		wait_element_tobe_displayed(getFundLoad());
 		List<WebElement> header = getTickerVerification();
@@ -143,27 +202,25 @@ public class UsFundFinderPage extends TestBase{
 			Assert.assertTrue(assetClass.contains("EQUITIES"));
 		}
 	}
-	public void vefifyFIXED_INCOME()
+	public void verifyFIXED_INCOME()
 	{
 		wait_element_tobe_displayed(getFundLoad());
 		List<WebElement> header = getTickerVerification();
 		for (WebElement head : header) {
 			String assetClass = head.getText();	
-			System.out.println(assetClass);
 			Assert.assertTrue(assetClass.contains("FIXED INCOME"));
 		}
 	}
-	public void vefifyMULTI_ASSET()
+	public void verifyMULTI_ASSET()
 	{
 		wait_element_tobe_displayed(getFundLoad());
 		List<WebElement> header = getTickerVerification();
 		for (WebElement head : header) {
 			String assetClass = head.getText();
-			System.out.println(assetClass);
 			Assert.assertTrue(assetClass.contains("MULTI-ASSET"));
 		}
 	}
-	public void vefifyALTERNATIVES()
+	public void verifyALTERNATIVES()
 	{
 		wait_element_tobe_displayed(getFundLoad());
 		List<WebElement> header = getTickerVerification();

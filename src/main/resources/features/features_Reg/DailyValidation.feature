@@ -68,7 +68,14 @@ Feature: Daily Production validaton
     And I select Alternatives in AssetClass DD
     Then Verify the Funds are Alternatives
     And I click on Reset Filters
-    
+    And I select Styles DD
+    And I select Equity Core in Styles DD
+    Then Verify Equity Core Funds
+    And I click on Reset Filters
+    And I select Region DD
+    And I select Global in Region DD
+    Then Verify Global Funds Count
+    And I click on Reset Filters
 
     Examples: 
       | Country  |
