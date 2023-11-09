@@ -76,6 +76,23 @@ Feature: Daily Production validaton
     And I select Global in Region DD
     Then Verify Global Funds Count
     And I click on Reset Filters
+    And I select ShareClass DD
+    And I select Advisor in ShareClass DD
+    Then Verify Total Mutual Funds Count
+    And I click on Reset Filters
+    When I click on Daily Pricing and Yields
+    Then I Verify Funds are Loaded
+    And I click on Literature
+    Then I Verify Funds are Loaded
+    And I click on Performance
+    When I click on Quarter End As Of
+    Then I Verify Funds are Loaded
+    When I click on Month End As Of
+    Then I Verify Funds are Loaded
+    When I click on Show Benchmark
+    Then Verify Benchmark Data
+    And I Click on Hide Benchmark
+    Then Verify QuickView of Funds
 
     Examples: 
       | Country  |

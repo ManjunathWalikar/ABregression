@@ -202,11 +202,73 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	{
 		po.us_fund_finder_page.verifyEquityCoreandGlobal();
 	}
+	@And("^I select ShareClass DD$")
+	public void I_select_ShareClass_DD()
+	{
+		po.us_fund_finder_page.clickOnShareClassDD();;
+	}
+	@And("^I select Advisor in ShareClass DD$")
+	public void select_Advisor_in_ShareClass_DD()
+	{
+		po.us_fund_finder_page.selectAdvisorFromShareClassDD();
+	}
 	
+	@Then("^Verify Total Mutual Funds Count$")
+	public void Verify_Total_Mutual_Funds_Counts()
+	{
+		po.us_fund_finder_page.verifyMutualFundCount();
+	}
 	
-	
-	
-	
+	@When("^I click on Daily Pricing and Yields$")
+	public void click_on_Daily_Pricing_and_Yields()
+	{
+		po.us_fund_finder_page.clickOnDailyPricingAndYields();
+	}
+	@Then("^I Verify Funds are Loaded$")
+	public void Verify_Funds_are_Loaded()
+	{
+		po.us_fund_finder_page.verifyFunds();
+	}
+	@And("^I click on Literature$")
+	public void I_click_on_Literature()
+	{
+		po.us_fund_finder_page.clickOnLiterature();
+	}
+	@And("^I click on Performance$")
+	public void I_click_on_Performance()
+	{
+		po.us_fund_finder_page.clickOnPerformance();
+	}
+	@When("^I click on Quarter End As Of$")
+	public void click_on_Quarter_End_As_Of()
+	{
+		po.us_fund_finder_page.clickOnQuarterEndAsOf();
+	}
+	@When("^I click on Month End As Of$")
+	public void click_on_Month_End_As_Of()
+	{
+		po.us_fund_finder_page.clickOnMonthEndAsOf();
+	}
+	@When("^I click on Show Benchmark$")
+	public void click_on_Show_Benchmark()
+	{
+		po.us_fund_finder_page.clickOnShowBenchmark();
+	}
+	@Then("^Verify Benchmark Data$")
+	public void Verify_Benchmark_Data()
+	{
+		po.us_fund_finder_page.verifyBenchMarkData();
+	}
+	@When("^I Click on Hide Benchmark$")
+	public void click_on_Hide_Benchmark()
+	{
+		po.us_fund_finder_page.clickOnHideBenchmark();
+	}
+	@Then("^Verify QuickView of Funds$")
+	public void Verify_QuickView_of_Funds()
+	{
+		po.us_fund_finder_page.verifyQuickViewOfFunds();
+	}
 	
 	
 	

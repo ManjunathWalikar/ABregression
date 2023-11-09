@@ -19,6 +19,7 @@ public class UsFundFinderPage extends TestBase{
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	Helper help =new Helper();
 	final static String EQUITY_CORE_and_GLOBAL = "11";
+	final static String TOTAL_MUTUAL_FUNDS_COUNT = "56";
 	
 	public static String MutualFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]";
 	public static String Daily_Pricing_and_Yields = "//span[@title='Daily Pricing and Yields']";
@@ -39,6 +40,16 @@ public class UsFundFinderPage extends TestBase{
 	public static String REGION_DD = "//div[contains(text(),'Region')]";
 	public static String Global = "//span[contains(text(),'Global')]";
 	public static String SHARECLASS_DD = "//div[contains(text(),'Advisor')]|//div[contains(text(),'Share Class')]";
+	public static String Advisor = "//span[contains(text(),'Advisor')]";
+	public static String LITERATURE = "//span[contains(text(),'Literature')]";
+	public static String PERFORMANCE = "//span[contains(text(),'Performance')]";
+	public static String QUARTER_END_AS_OF = "//span[contains(text(),'Quarter End as of')]";
+	public static String MONTH_END_AS_OF = "//span[contains(text(),'Month End as of')]";
+	public static String BENCHMARK_DATA = "//div[contains(@data-testid,'benchmark-data-0')]";
+	public static String SHOW_BENCHMARK = "//span[contains(text(),'Show Benchmarks')]";
+	public static String HIDE_BENCHMARK ="//span[contains(text(),'Hide Benchmarks')]";
+	public static String QUICK_VIEW = "//button[contains(@class,'ExpandableTableRow_expand-row')]";
+	public static String Fees_and_Expenses = "//h4[contains(text(),'Fees & Expenses')]";
 	
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
@@ -95,12 +106,110 @@ public class UsFundFinderPage extends TestBase{
 	public WebElement getGlobalFromRegionDD() {
 		return help.get_element(Global);
 	}
+	public WebElement getShareClassDD() {
+		return help.get_element(SHARECLASS_DD);
+	}
+	public WebElement getAdvisorFromShareClassDD() {
+		return help.get_element(Advisor);
+	}
+	public WebElement getDailyPricingAndYields()
+	{
+		return help.get_element(Daily_Pricing_and_Yields);
+	}
+	public WebElement getFunds()
+	{
+		return help.get_element(allFunds);
+	}
+	public WebElement getLiterature() {
+		return help.get_element(LITERATURE);
+	}
+	public WebElement getPerformance() {
+		return help.get_element(PERFORMANCE);
+	}
+	public WebElement getQuarterEndAsOf() {
+		return help.get_element(QUARTER_END_AS_OF);
+	}
+	public WebElement getMonthEndAsOf() {
+		return help.get_element(MONTH_END_AS_OF);
+	}
+	public WebElement getShowBenchMark() {
+		return help.get_element(SHOW_BENCHMARK);
+	}
+	public WebElement getHideBenchMark() {
+		return help.get_element(HIDE_BENCHMARK);
+	}
+	public WebElement getBenchMarkData() {
+		return help.get_element(BENCHMARK_DATA);
+	}
+	public List<WebElement> getQuickViewIcon() {
+		return help.get_elements(QUICK_VIEW);
+	}
+	public WebElement getFeesAndExpenses() {
+		return help.get_element(Fees_and_Expenses);
+	}
 	
+	/*
+	 * Initialization
+	 */
 	public UsFundFinderPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
 	}
 	
+	public void verifyQuickViewOfFunds() {
+		List<WebElement> viewIcon = getQuickViewIcon();
+		for (WebElement icon : viewIcon) {
+			icon.click();
+			wait_element_tobe_displayed(getFeesAndExpenses());
+			Assert.assertTrue(getFeesAndExpenses().isDisplayed());
+			icon.click();
+		}
+	}
+	public void clickOnShowBenchmark() {
+		wait_element_tobe_clickable(getShowBenchMark());
+		getShowBenchMark().click();
+	}
+	public void clickOnHideBenchmark() {
+		wait_element_tobe_clickable(getHideBenchMark());
+		getHideBenchMark().click();
+	}
+	public void verifyBenchMarkData() {
+		wait_element_tobe_displayed(getBenchMarkData());
+		Assert.assertTrue(getBenchMarkData().isDisplayed());
+	}
+	
+	public void clickOnMonthEndAsOf() {
+		wait_element_tobe_clickable(getMonthEndAsOf());
+		getMonthEndAsOf().click();
+	}
+	public void clickOnQuarterEndAsOf() {
+		wait_element_tobe_clickable(getQuarterEndAsOf());
+		getQuarterEndAsOf().click();
+	}
+	public void verifyFunds()
+	{
+		wait_element_tobe_displayed(getFunds());
+		Assert.assertTrue(getFunds().isDisplayed());
+	}
+	public void clickOnPerformance()
+	{
+		wait_element_tobe_clickable(getPerformance());
+		getPerformance().click();
+	}
+	public void clickOnLiterature()
+	{
+		wait_element_tobe_clickable(getLiterature());
+		getLiterature().click();
+	}
+	public void clickOnDailyPricingAndYields()
+	{
+		wait_element_tobe_clickable(getDailyPricingAndYields());
+		getDailyPricingAndYields().click();
+	}
+	public void verifyMutualFundCount() {
+		String mutualFundCount = showResults().getText();
+		Assert.assertTrue(mutualFundCount.equals(TOTAL_MUTUAL_FUNDS_COUNT));
+	}
 	public void verifyEquityCoreandGlobal()
 	{
 		String equityCore = showResults().getText();
@@ -120,6 +229,22 @@ public class UsFundFinderPage extends TestBase{
 	{
 		help.wait_element_tobe_clickable(getRegionDD());
 		getRegionDD().click();
+	}
+	public void clickOnShareClassDD()
+	{
+		help.wait_element_tobe_clickable(getShareClassDD());
+		getShareClassDD().click();
+	}
+	public void selectAdvisorFromShareClassDD()
+	{
+		help.wait_element_tobe_clickable(getAdvisorFromShareClassDD());
+		getAdvisorFromShareClassDD().click();
+		try {
+			Thread.sleep(4000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void selectGlobalFromRegionDD()
 	{
