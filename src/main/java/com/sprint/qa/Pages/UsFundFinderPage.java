@@ -1,5 +1,8 @@
 package com.sprint.qa.Pages;
 
+import static org.junit.Assert.assertTrue;
+
+import java.awt.event.KeyEvent;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -23,7 +26,7 @@ public class UsFundFinderPage extends TestBase{
 	
 	public static String MutualFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]";
 	public static String Daily_Pricing_and_Yields = "//span[@title='Daily Pricing and Yields']";
-	public static String allFunds = "//tbody[contains(@class,'Table_table-rows-container')]//a";
+	public static String allFunds = "//*[contains(@class,'Table_table-rows-container')]//a";
 	public static String AF_OF_DATE = "//p[contains(@class,'asOf')]";
 	public static String ETFFundVehicle = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'ETFs')]";
 	public static String ASSETCLASSDD = "//div[contains(text(),'Asset Class')]";
@@ -50,6 +53,7 @@ public class UsFundFinderPage extends TestBase{
 	public static String HIDE_BENCHMARK ="//span[contains(text(),'Hide Benchmarks')]";
 	public static String QUICK_VIEW = "//button[contains(@class,'ExpandableTableRow_expand-row')]";
 	public static String Fees_and_Expenses = "//h4[contains(text(),'Fees & Expenses')]";
+	public static String FUND_SEARCH = "//input[@id='fund-search']";
 	
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
@@ -141,11 +145,14 @@ public class UsFundFinderPage extends TestBase{
 	public WebElement getBenchMarkData() {
 		return help.get_element(BENCHMARK_DATA);
 	}
-	public List<WebElement> getQuickViewIcon() {
-		return help.get_elements(QUICK_VIEW);
+	public WebElement getQuickViewIcon() {
+		return help.get_element(QUICK_VIEW);
 	}
 	public WebElement getFeesAndExpenses() {
 		return help.get_element(Fees_and_Expenses);
+	}
+	public WebElement getFundSearch() {
+		return help.get_element(FUND_SEARCH);
 	}
 	
 	/*
@@ -155,15 +162,41 @@ public class UsFundFinderPage extends TestBase{
 	{
 		PageFactory.initElements(driver, true);
 	}
-	
-	public void verifyQuickViewOfFunds() {
-		List<WebElement> viewIcon = getQuickViewIcon();
-		for (WebElement icon : viewIcon) {
-			icon.click();
-			wait_element_tobe_displayed(getFeesAndExpenses());
-			Assert.assertTrue(getFeesAndExpenses().isDisplayed());
-			icon.click();
+	public void searchFund(String fund)
+	{
+		getFundSearch().sendKeys(fund);
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER);
+	}
+	public void validateFDpage(String fund) {
+		try {
+			Thread.sleep(2000);
+			String title = driver.getTitle();
+			Assert.assertTrue(title.contains(fund));
+			driver.navigate().back();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
+	}
+	public void validateFFAsOfDate() {
+		int currentDate = date.getDate();
+		int day = date.getDay();
+		int asofdate = 0;
+		if(day==1)
+		{
+			asofdate = currentDate-3;
+		}
+		else
+		{
+			asofdate = currentDate-1;
+		}
+		String updatedDate = ""+asofdate+"";
+		Assert.assertTrue(getAsOfDate().contains(updatedDate));
+	}
+	public void verifyQuickViewOfFunds() {
+		getQuickViewIcon().click();
+			Assert.assertTrue(getFeesAndExpenses().isDisplayed());
+			getQuickViewIcon().click();
 	}
 	public void clickOnShowBenchmark() {
 		wait_element_tobe_clickable(getShowBenchMark());
@@ -188,6 +221,11 @@ public class UsFundFinderPage extends TestBase{
 	}
 	public void verifyFunds()
 	{
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		wait_element_tobe_displayed(getFunds());
 		Assert.assertTrue(getFunds().isDisplayed());
 	}
@@ -207,7 +245,14 @@ public class UsFundFinderPage extends TestBase{
 		getDailyPricingAndYields().click();
 	}
 	public void verifyMutualFundCount() {
+		try {
+			Thread.sleep(5000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		wait_element_tobe_clickable(allFunds);
 		String mutualFundCount = showResults().getText();
+		System.out.println(mutualFundCount);
 		Assert.assertTrue(mutualFundCount.equals(TOTAL_MUTUAL_FUNDS_COUNT));
 	}
 	public void verifyEquityCoreandGlobal()
@@ -450,6 +495,7 @@ public class UsFundFinderPage extends TestBase{
 	public void validateETFFunds()
 	{
 		String as_Of_date = getAsOfDate();
+		validateFFAsOfDate();
 		String parent = driver.getWindowHandle();
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {

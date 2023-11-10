@@ -129,6 +129,7 @@ public class TestBase {
         action = new Actions(driver);
         page = new PageObjects();
         date = new Date();
+        robot = new Robot();
         simdate = new SimpleDateFormat("MM/dd/yyyy");
         parentwindow = driver.getWindowHandle();
         h = new Helper();

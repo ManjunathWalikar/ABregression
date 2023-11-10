@@ -269,6 +269,21 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	{
 		po.us_fund_finder_page.verifyQuickViewOfFunds();
 	}
+	@When("^I Validate As Of Date$")
+	public void Validate_As_Of_Date()
+	{
+		po.us_fund_finder_page.validateFFAsOfDate();
+	}
+	@When("^I search '(.*)' in FF page FundSearch$")
+	public void fundsearch_textbox(String fundName)
+	{
+		po.us_fund_finder_page.searchFund(fundName);
+	}
+	@Then("^I validate FD page of '(.*)'$")
+	public void validate_FD_Page(String fundName)
+	{
+		po.us_fund_finder_page.validateFDpage(fundName);
+	}
 	
 	
 	

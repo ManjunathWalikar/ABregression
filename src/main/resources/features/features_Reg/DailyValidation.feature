@@ -75,9 +75,11 @@ Feature: Daily Production validaton
     And I select Region DD
     And I select Global in Region DD
     Then Verify Global Funds Count
-    And I click on Reset Filters
+    And I select Global in Region DD
     And I select ShareClass DD
     And I select Advisor in ShareClass DD
+    And I select ShareClass DD
+    
     Then Verify Total Mutual Funds Count
     And I click on Reset Filters
     When I click on Daily Pricing and Yields
@@ -93,10 +95,14 @@ Feature: Daily Production validaton
     Then Verify Benchmark Data
     And I Click on Hide Benchmark
     Then Verify QuickView of Funds
+    When I click on Daily Pricing and Yields
+    When I Validate As Of Date
+    And I search '<Fundname>' in FF page FundSearch
+    Then I validate FD page of '<Fundname>'
 
     Examples: 
-      | Country  |
-      |United States|
+      | Country  | Fundname |
+      |United States| AB All China Equity Portfolio |
       
       
       
