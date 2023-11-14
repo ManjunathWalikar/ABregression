@@ -21,7 +21,7 @@ import io.cucumber.junit.CucumberOptions;
 		monochrome = false, //display the console o/p in proper readable format
 		dryRun = false,//to check the mapping is proper between feature file and step def file
 		stepNotifications = true,
-		tags="@FF"
+		tags="@FundFinderProdUS"
 		//tags = "@Regression1,~@ignore"
 
 )

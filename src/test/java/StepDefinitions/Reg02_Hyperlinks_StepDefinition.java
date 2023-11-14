@@ -285,7 +285,43 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 		po.us_fund_finder_page.validateFDpage(fundName);
 	}
 	
+	@When("^I click on SMAS Funds$")
+	public void click_on_SMAS_Funds()
+	{
+		po.us_fund_finder_page.clickOnSMAS();
+	}
+	@Then("Verify Each SMAS Funds")
+	public void verify_each_SMAS_funds() {
+	    po.us_fund_finder_page.validateSMASFunds();
+	}
+	@When("^I click on Model Portfolio Funds$")
+	public void click_on_Model_Portfolio_Funds()
+	{
+		po.us_fund_finder_page.clickOnModelPortFolio();
+	}
+	@Then("Verify Each Model Portfolio Funds")
+	public void verify_each_Model_Portfolio_funds() {
+	    po.us_fund_finder_page.validateSMASFunds();
+	}
+	@When("^I click on Closed End Funds$")
+	public void click_on_Closed_End_Funds()
+	{
+		po.us_fund_finder_page.clickOnClosedEndFund();
+	}
+	@Then("^Verify Each Closed End Funds$")
+	public void verify_each_Closed_End_funds() {
+	    po.us_fund_finder_page.validateClosedEndFunds();
+	}
 	
+	@When("^I click on Veriable Product Series Funds$")
+	public void click_on_Veriable_Product_Series_Funds()
+	{
+		po.us_fund_finder_page.clickOnVeriableProductSeriesFund();
+	}
+	@Then("^Verify Each Veriable Product Series Funds$")
+	public void verify_each_Veriable_Product_Series_funds() {
+	    po.us_fund_finder_page.validateVeriableProductSeriesFunds();
+	}
 	
 	
 	

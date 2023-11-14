@@ -106,7 +106,7 @@ public class TestBase {
 //        chromepreferences.put("profile.default_content_settings.popups", 0);
 //        chromepreferences.put("download.default_directory", download_path);
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--window-size=1920,1080");
+//        chromeOptions.addArguments("--window-size=1920,1080");
         chromeOptions.addArguments("--disable-extensions");
         chromeOptions.addArguments("--proxy-server='direct://'");
         chromeOptions.addArguments("--proxy-bypass-list=*");

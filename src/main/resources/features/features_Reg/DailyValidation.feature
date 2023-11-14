@@ -33,7 +33,7 @@ Feature: Daily Production validaton
       
       
   @ETF
-  Scenario Outline: Prod Validation for US
+  Scenario Outline: Prod Validation for US ETF Funds
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
     And I click on Investment
@@ -105,25 +105,84 @@ Feature: Daily Production validaton
       |United States| AB All China Equity Portfolio |
       
       
+  @SMAS
+  Scenario Outline: Prod Validation for US SMAS Funds
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on SMAS Funds
+    Then Verify Each SMAS Funds    
+      
+    Examples: 
+      | Country  | 
+      |United States|   
+      
+   @MPF
+  Scenario Outline: Prod Validation for US Model Portfolio Funds
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on Model Portfolio Funds
+    Then Verify Each Model Portfolio Funds    
+      
+    Examples: 
+      | Country  | 
+      |United States|    
+      
+      
+   @CEF
+  Scenario Outline: Prod Validation for US Closed End Funds
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on Closed End Funds
+    Then Verify Each Closed End Funds    
+      
+    Examples: 
+      | Country  | 
+      |United States|   
       
       
       
+  @VPSF
+  Scenario Outline: Prod Validation for US Veriable Product Series Funds
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on Veriable Product Series Funds
+    Then Verify Each Veriable Product Series Funds    
+      
+    Examples: 
+      | Country  | 
+      |United States|    
       
       
+  @FundFinderProdUS   
+  Scenario Outline: Prod Validation for US Fund Finder Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on Mutual Funds
+    Then Verify Each mutual Funds 
+    When I click on SMAS Funds
+    Then Verify Each SMAS Funds
+    When I click on ETF Funds
+    Then Verify Each ETF Funds
+    When I click on Model Portfolio Funds
+    Then Verify Each Model Portfolio Funds
+    When I click on Closed End Funds
+    Then Verify Each Closed End Funds
+    When I click on Veriable Product Series Funds
+    Then Verify Each Veriable Product Series Funds  
       
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+    Examples: 
+      | Country  | 
+      |United States|   
       
       
       

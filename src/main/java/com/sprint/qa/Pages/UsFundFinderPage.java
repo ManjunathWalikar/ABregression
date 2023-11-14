@@ -54,7 +54,10 @@ public class UsFundFinderPage extends TestBase{
 	public static String QUICK_VIEW = "//button[contains(@class,'ExpandableTableRow_expand-row')]";
 	public static String Fees_and_Expenses = "//h4[contains(text(),'Fees & Expenses')]";
 	public static String FUND_SEARCH = "//input[@id='fund-search']";
-	
+	public static String SMAS_VEHICLE = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'SMAs')]";
+	public static String MODEL_PORTFOLIOS_VEHICLE = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Model Portfolios')]";
+	public static String CLOSED_END_FUND_VEHICLE = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Closed-End Funds')]";
+	public static String VERIABLE_PRODUCT_SERIES = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Variable Product Series')]";
 	
 	@FindBy(xpath = "//ul[contains(@class,'VehicleTabs')]//span[contains(text(),'Mutual Funds')]")
 	private WebElement MutualFund;
@@ -154,6 +157,18 @@ public class UsFundFinderPage extends TestBase{
 	public WebElement getFundSearch() {
 		return help.get_element(FUND_SEARCH);
 	}
+	public WebElement getSMAvehicle() {
+		return help.get_element(SMAS_VEHICLE);
+	}
+	public WebElement getModelPortfolio() {
+		return help.get_element(MODEL_PORTFOLIOS_VEHICLE);
+	}
+	public WebElement getClosedEndFund() {
+		return help.get_element(CLOSED_END_FUND_VEHICLE);
+	}
+	public WebElement getVeriableProductSeriesFund() {
+		return help.get_element(VERIABLE_PRODUCT_SERIES);
+	}
 	
 	/*
 	 * Initialization
@@ -161,6 +176,23 @@ public class UsFundFinderPage extends TestBase{
 	public UsFundFinderPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
+	}
+	
+	/**
+	 * Utilization
+	 */
+	public void clickOnVeriableProductSeriesFund() {
+		getVeriableProductSeriesFund().click();
+	}
+	
+	public void clickOnClosedEndFund() {
+		getClosedEndFund().click();
+	}
+	public void clickOnModelPortFolio() {
+		getModelPortfolio().click();
+	}
+	public void clickOnSMAS() {
+		getSMAvehicle().click();
 	}
 	public void searchFund(String fund)
 	{
@@ -170,8 +202,9 @@ public class UsFundFinderPage extends TestBase{
 	}
 	public void validateFDpage(String fund) {
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(5000);
 			String title = driver.getTitle();
+			System.out.println(title);
 			Assert.assertTrue(title.contains(fund));
 			driver.navigate().back();
 		} catch (InterruptedException e) {
@@ -287,7 +320,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -298,7 +330,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -309,7 +340,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -320,7 +350,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -330,9 +359,8 @@ public class UsFundFinderPage extends TestBase{
 		help.wait_element_tobe_clickable(getFixedIncome());
 		getFixedIncome().click();
 		try {
-			Thread.sleep(4000);
+			Thread.sleep(6000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -343,7 +371,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -354,7 +381,6 @@ public class UsFundFinderPage extends TestBase{
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -445,7 +471,7 @@ public class UsFundFinderPage extends TestBase{
 		String parent = driver.getWindowHandle();
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {
-			help.switchWindow(parent);
+//			help.switchWindow(parent);
 			scrollintoview(fund);
 			String fundName = fund.getText();
 			String NAV_value = getNAVdata(fundName);
@@ -456,6 +482,84 @@ public class UsFundFinderPage extends TestBase{
 			page.us_fund_details_page.clickOnOverview();
 			page.us_fund_details_page.clickOnPerformance();
 			driver.close();
+			help.switchWindow(parent);
+		}
+	}
+	public void validateSMASFunds()
+	{
+		String parent = driver.getWindowHandle();
+		List<WebElement> funds = help.get_elements(allFunds);
+		for (WebElement fund : funds) {
+//			help.switchWindow(parent);
+			scrollintoview(fund);
+			String fundName = fund.getText();
+			fund.click();
+			help.switchWindowFDpage(fundName);
+			page.us_fund_details_page.clickOnOverview();
+			// Literature Tab
+			page.us_fund_details_page.clickOnLiterature();
+			driver.close();
+			help.switchWindow(parent);
+		}
+	}
+	public void validateClosedEndFunds()
+	{
+		String parent = driver.getWindowHandle();
+		List<WebElement> funds = help.get_elements(allFunds);
+		for (WebElement fund : funds) {
+//			help.switchWindow(parent);
+			String fundName = fund.getText();
+			fund.click();
+			help.switchWindowFDpage(fundName);
+			page.us_fund_details_page.clickOnOverview();
+			page.us_fund_details_page.verifyKeyFacts();
+			
+			// Performance Tab
+			page.us_fund_details_page.clickOnPerformance();
+			page.us_fund_details_page.verifyHypotheticalGrowth();
+			page.us_fund_details_page.verifyNavHistoryChart();
+			
+			// Yields and Distribution Tab
+			page.us_fund_details_page.clickOnYields();
+			
+			// Holdings Tab
+			page.us_fund_details_page.clickOnHoldings();
+			
+			// Literature Tab
+			page.us_fund_details_page.clickOnLiterature();
+			driver.close();
+			help.switchWindow(parent);
+		}
+	}
+	public void validateVeriableProductSeriesFunds()
+	{
+		String parent = driver.getWindowHandle();
+		List<WebElement> funds = help.get_elements(allFunds);
+		for (WebElement fund : funds) {
+//			help.switchWindow(parent);
+			String fundName = fund.getText();
+			fund.click();
+			help.switchWindowFDpage(fundName);
+			try {
+				page.us_fund_details_page.clickOnOverview();
+				page.us_fund_details_page.verifyKeyFacts();
+				
+				// Performance Tab
+				page.us_fund_details_page.clickOnPerformance();
+				page.us_fund_details_page.verifyHypotheticalGrowth();
+				page.us_fund_details_page.verifyNavHistoryChart();
+				
+				// Holdings Tab
+				page.us_fund_details_page.clickOnHoldings();
+							
+				// Literature Tab
+				page.us_fund_details_page.clickOnLiterature();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
+			driver.close();
+			help.switchWindow(parent);
 		}
 	}
 	
@@ -464,7 +568,7 @@ public class UsFundFinderPage extends TestBase{
 		String as_Of_date = getAsOfDate();
 		String parent = driver.getWindowHandle();
 		WebElement fund = help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+FundName+"')]");
-			help.switchWindow(parent);
+//			help.switchWindow(parent);
 			scrollintoview(fund);
 			String NAV_value = getNAVdata(FundName);
 			fund.click();
@@ -490,6 +594,7 @@ public class UsFundFinderPage extends TestBase{
 			// Literature Tab
 			page.us_fund_details_page.clickOnLiterature();
 			driver.close();
+			help.switchWindow(parent);
 	}
 	
 	public void validateETFFunds()
@@ -499,7 +604,7 @@ public class UsFundFinderPage extends TestBase{
 		String parent = driver.getWindowHandle();
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {
-			help.switchWindow(parent);
+//			help.switchWindow(parent);
 			scrollintoview(fund);
 			String fundName = fund.getText();
 			String NAV_value = getETFNAVdata(fundName);
@@ -536,6 +641,7 @@ public class UsFundFinderPage extends TestBase{
 			// Literature Tab
 			page.us_fund_details_page.clickOnLiterature();
 			driver.close();
+			help.switchWindow(parent);
 		}
 	}
 	
