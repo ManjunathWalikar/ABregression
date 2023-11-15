@@ -219,6 +219,12 @@ public class UsFundFinderPage extends TestBase{
 		{
 			asofdate = currentDate-3;
 		}
+		else if (day==6) {
+			asofdate = currentDate-1;
+		}
+		else if (day==7) {
+			asofdate = currentDate-2;
+		}
 		else
 		{
 			asofdate = currentDate-1;
