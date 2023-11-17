@@ -467,6 +467,10 @@ public class UsFundFinderPage extends TestBase{
 	{
 		return help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]/../following-sibling::p[3]").getText();
 	}
+	public void clickOnGivenFund(String fundName)
+	{
+		 help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]").click();
+	}
 	
 	/**
 	 * Common methods 
@@ -593,6 +597,7 @@ public class UsFundFinderPage extends TestBase{
 			
 			// Yields and Distribution Tab
 			page.us_fund_details_page.clickOnYields();
+			page.us_fund_details_page.validateDistributionTable();
 			
 			// Holdings Tab
 			page.us_fund_details_page.clickOnHoldings();

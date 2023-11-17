@@ -161,8 +161,8 @@ Feature: Daily Production validaton
       |United States|    
       
       
-  @FundFinderProdUS   
-  Scenario Outline: Prod Validation for US Fund Finder Page   
+  @FundDetailProdUS   
+  Scenario Outline: Prod Validation for US Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
     And I click on Investment
@@ -185,7 +185,39 @@ Feature: Daily Production validaton
       |United States|   
       
       
-      
+  @FDpage
+  Scenario Outline: US Mutual Fund Details Page Validation
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor
+    And I click on Investment
+    And I click on Products
+    When I click on Mutual Funds
+    And I get as of Date From FF page
+    And I get NAV value of '<Fundname>' FF page
+    When I Validate As Of Date
+    And I Click On given '<Fundname>'
+    And I Switch Window to '<Fundname>'
+    And I Validate As Of Date in FD Page
+    And I Validate NAV Value    
+    And I Click On Overview
+    Then I Verify Key Facts
+    And I click on Pricing and Performance
+    Then I Validate Daily Nav As Of Value
+    And I Validate Hypothetical Growth
+    And I validate NAV History Chart
+    And I click On Yields and Distribution
+    Then I Validate Distribution Table
+    And I click on Holdings and Characteristics
+    Then I Verify Holdings Table
+    And I click on Literature Vehicle
+    And I click on select all Literature checkbox
+    Then I verify Document Selected PopUp
+    And I click on select all Literature checkbox
+    And I close current Browser
+    
+    Examples: 
+      | Country  | Fundname |
+      |United States| AB All Market Real Return Portfolio |    
       
       
       

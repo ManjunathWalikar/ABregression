@@ -29,6 +29,8 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	Helper help = new Helper();
 	PageObjects po = new PageObjects();
+	public static String NAV_VALUE;
+	public static String AS_OF_DATE;
 
 	public Reg02_Hyperlinks_StepDefinition()
 	{
@@ -322,6 +324,124 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	public void verify_each_Veriable_Product_Series_funds() {
 	    po.us_fund_finder_page.validateVeriableProductSeriesFunds();
 	}
+	@Then("^I Switch Window to '(.*)'$")
+	public void switch_window(String fundName)
+	{
+		help.switchWindowFDpage(fundName);
+		log.info("Switched to "+fundName);
+	}
+	@When("^I get NAV value of '(.*)' FF page$")
+	public void get_NAV_From_FF(String fundName)
+	{
+		NAV_VALUE = po.us_fund_finder_page.getNAVdata(fundName);
+	}
+	@When("^I Click On given '(.*)'$")
+	public void click_on_Fund(String fundName)
+	{
+		po.us_fund_finder_page.clickOnGivenFund(fundName);
+	}
+	@And("^I get as of Date From FF page$")
+	public void get_asOfDate_From_FF()
+	{
+		AS_OF_DATE = po.us_fund_finder_page.getAsOfDate();
+	}
+	@Then("^I Validate As Of Date in FD Page$")
+	public void validate_asOfDate_in_FD_Page()
+	{
+		po.us_fund_details_page.validateAsOfDate(AS_OF_DATE);
+	}
+	@Then("^I Validate NAV Value$")
+	public void validate_NAV_Value_in_FD_Page()
+	{
+		po.us_fund_details_page.validateNAV(NAV_VALUE);
+	}
+	@When("^I Click On Overview$")
+	public void click_on_Overview()
+	{
+		po.us_fund_details_page.clickOnOverview();
+	}
+	@Then("^I Verify Key Facts$")
+	public void verify_Key_Facts()
+	{
+		po.us_fund_details_page.verifyKeyFacts();
+	}
+	@When("^I click on Pricing and Performance$")
+	public void click_on_Pricing_and_Performance()
+	{
+		po.us_fund_details_page.clickOnPerformance();
+	}
+	@Then("^I Validate Daily Nav As Of Value$")
+	public void validate_Daily_Nav_As_Of_Value()
+	{
+		po.us_fund_details_page.verifyDailyAsOfNavValue(NAV_VALUE);
+	}
+	@Then("^I Validate Hypothetical Growth$")
+	public void validate_Hypothetical_Growth()
+	{
+		po.us_fund_details_page.verifyHypotheticalGrowth();
+	}
+	@Then("^I validate NAV History Chart$")
+	public void validate_NAV_History_Chart()
+	{
+		po.us_fund_details_page.verifyNavHistoryChart();
+	}
+	@When("^I click On Yields and Distribution$")
+	public void click_on_Yields_and_Distribution()
+	{
+		po.us_fund_details_page.clickOnYields();
+	}
+	@Then("^I Validate Distribution Table$")
+	public void validate_Distribution_Table()
+	{
+		po.us_fund_details_page.validateDistributionTable();
+	}
+	@When("^I click on Holdings and Characteristics$")
+	public void click_on_Holdings_and_Characteristics()
+	{
+		po.us_fund_details_page.clickOnHoldings();
+	}
+	@Then("^I Verify Holdings Table$")
+	public void validate_Holdings_Table()
+	{
+		po.us_fund_details_page.validateHoldingsTable();
+	}
+	@When("^I click on Literature Vehicle$")
+	public void click_on_Literature_Vehicle()
+	{
+		po.us_fund_details_page.clickOnLiterature();
+	}
+	@When("^I click on select all Literature checkbox$")
+	public void click_on_select_all_Literature()
+	{
+		po.us_fund_details_page.clickOnSelectAllLiteratureCheckbox();
+	}
+	@Then("^I verify Document Selected PopUp$")
+	public void validate_Document_Selected_PopUp()
+	{
+		po.us_fund_details_page.validateDistributionTablePopup();
+	}
+	@When("^I close current Browser$")
+	public void close_current_browser()
+	{
+		driver.close();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	

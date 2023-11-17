@@ -49,6 +49,10 @@ public class UsFundDetailsPage extends TestBase {
 	public static String NAVHISTORY_5YEARS = "//div[contains(@class,'NavHistory')]//span[@title='5 Years']";
 	public static String NAVHISTORY_10YEARS = "//div[contains(@class,'NavHistory')]//span[@title='10 Years']";
 	public static String NAVHISTORY_MAXRANGE = "//div[contains(@class,'NavHistory')]//span[@title='Max Range']";
+	public static String DISTRIBUTION_TABLE = "//th[contains(text(),'Distributions')]/ancestor::table";
+	public static String HOLDINGS_TABLE = "//div[contains(@class,'HoldingsAndCharacteristics_chart-container')]";
+	public static String SELECT_ALL_CHECKBOX_LITERATURE = "//label[contains(text(),'Select All')]";
+	public static String DOCUMENTS_SELECTED_POPUP = " //p[contains(@class,'abde-t-regular')]";
 	
 	
 	
@@ -134,8 +138,18 @@ public class UsFundDetailsPage extends TestBase {
 	{
 		return help.get_element(ETF_NAV_HISTORY_CHART);
 	}
-	
-	
+	public WebElement getDistributionTable() {
+		return help.get_element(DISTRIBUTION_TABLE);
+	}
+	public WebElement getHoldingsTable() {
+		return help.get_element(HOLDINGS_TABLE);
+	}
+	public WebElement getSelectAllLiteratureCheckbox() {
+		return help.get_element(SELECT_ALL_CHECKBOX_LITERATURE);
+	}
+	public WebElement getDocumentSelected() {
+		return help.get_element(DOCUMENTS_SELECTED_POPUP);
+	}
 	/**
 	 * Common methods 
 	 */
@@ -145,6 +159,39 @@ public class UsFundDetailsPage extends TestBase {
 		String FD_NAV = get_NAV_value().getText();
 		System.out.println(FD_NAV);
 		Assert.assertTrue(FD_NAV.contains(FF_NAV));
+	}
+	public void clickOnSelectAllLiteratureCheckbox() {
+		try {
+			getSelectAllLiteratureCheckbox().click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void validateDistributionTable() {
+		try {
+			wait_element_tobe_displayed(getDistributionTable());
+			Assert.assertTrue(getDistributionTable().isDisplayed());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void validateDistributionTablePopup() {
+		try {
+			wait_element_tobe_displayed(getDocumentSelected());
+			Assert.assertTrue(getDocumentSelected().isDisplayed());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void validateHoldingsTable() {
+		try {
+			Assert.assertTrue(getHoldingsTable().isDisplayed());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public void validateETFNAV(String FF_NAV)
