@@ -14,7 +14,7 @@ Feature: Daily Production validaton
       | Country  |
       |United States|
       
-  @Test
+  @ProdValidation
   Scenario Outline: Prod Validation for US
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -26,13 +26,13 @@ Feature: Daily Production validaton
     Examples: 
       | Country     |Perticular |
       |United States|AB All China Equity Portfolio|
-      #|United States|AB All Market Real Return Portfolio|
-      #|United States|AB All Market Total Return Portfolio|
-      #|United States|AB Arizona Portfolio|
+      |United States|AB All Market Real Return Portfolio|
+      |United States|AB All Market Total Return Portfolio|
+      |United States|AB Arizona Portfolio|
 
       
       
-  @ETF
+  @ProdValidation
   Scenario Outline: Prod Validation for US ETF Funds
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -46,7 +46,7 @@ Feature: Daily Production validaton
       |United States|
       
       
-  @FF
+  @ProdValidation
   Scenario Outline: US Fund Finder Page Validation
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -185,7 +185,7 @@ Feature: Daily Production validaton
       |United States|   
       
       
-  @FDpage
+  @ProdValidation
   Scenario Outline: US Mutual Fund Details Page Validation
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -218,6 +218,28 @@ Feature: Daily Production validaton
     Examples: 
       | Country  | Fundname |
       |United States| AB All Market Real Return Portfolio |    
+   
+   @SGPROD   
+  Scenario Outline: Prod Validation for US Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I Click on Yes Continue Btn
+    And I click on view all funds
+    #And I select AssetClass DD
+    #And I select Equities in AssetClass DD
+    When I click on Currencies DD
+    Then Verify Default Currencies for SG
+    When I click on Shareclass DD
+    Then Verify Default Shareclass For SG
+    And I click on Performance Tab
+    Then I verify Funds are Displayed
+    And I click on Fund Facts
+    Then I verify Funds are Displayed
+    And I click on Documents
+    Then I verify Funds are Displayed
+    And I click on DailyPricing Tab
+    Then I verify Funds are Displayed
       
-      
-      
+    Examples: 
+      | Country  | 
+      | Singapore|    

@@ -197,12 +197,11 @@ public class UsFundFinderPage extends TestBase{
 	public void searchFund(String fund)
 	{
 		getFundSearch().sendKeys(fund);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		help.get_element("//span[contains(text(),'"+fund+"')]").click();
 	}
 	public void validateFDpage(String fund) {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(10000);
 			String title = driver.getTitle();
 			System.out.println(title);
 			Assert.assertTrue(title.contains(fund));
@@ -285,7 +284,7 @@ public class UsFundFinderPage extends TestBase{
 	}
 	public void verifyMutualFundCount() {
 		try {
-			Thread.sleep(5000);
+			Thread.sleep(15000);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}

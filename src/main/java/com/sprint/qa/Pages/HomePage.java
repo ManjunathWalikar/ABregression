@@ -18,6 +18,7 @@ public class HomePage extends TestBase {
 	public static String INVESTMENTS = "//span[contains(text(),'Investments ')]";
 	public static String PRODUCTS = "//div[contains(@class,'header')]//a[contains(text(),'Products')]";
 	public static String AcceptCookies = "//button[@id='onetrust-accept-btn-handler']";
+	public static String YES_CONTINUE_BTN = "//button[contains(text(),'Yes Continue')]";
 	
 	public HomePage(WebDriver driver)
 	{
@@ -29,6 +30,7 @@ public class HomePage extends TestBase {
 		WebElement ele = help.get_element(CHOOSE_YOUR_SITE);
 		return ele;
 	}
+	
 	public WebElement getIndividualInvestor()
 	{
 		WebElement ele = help.get_element(INDIVIDUAL_INVESTOR);
@@ -48,7 +50,22 @@ public class HomePage extends TestBase {
 	{
 		return help.get_element(AcceptCookies);
 	}
+	public WebElement getYesContinueBtn() {
+		return help.get_element(YES_CONTINUE_BTN);
+	}
+	/**
+	 * Utilization
+	 */
 	
+	public void clickOnYesContinueBtn() {
+		wait_element_tobe_displayed(getAcceptCookies());
+		try {
+			getAcceptCookies().click();
+			getYesContinueBtn().click();
+		} catch (Exception e) {
+			scrollandclick(getYesContinueBtn());
+		}
+	}
 	public void navigateToGivenSite(String country)
 	{
 		getChooseYourSite().click();
@@ -56,6 +73,7 @@ public class HomePage extends TestBase {
 		getAcceptCookies().click();
 		WebElement countrySpecific = help.get_element("//span[contains(text(),'"+country+"')]");
 		try {
+			wait_element_tobe_clickable(countrySpecific);
 			countrySpecific.click();
 		} catch (Exception e) {
 			scrollandclick(countrySpecific);
@@ -65,6 +83,7 @@ public class HomePage extends TestBase {
 	public void clickOnIndividualInvestor()
 	{
 		try {
+			wait_element_tobe_clickable(getIndividualInvestor());
 			getIndividualInvestor().click();
 			Thread.sleep(5000);
 		} catch (Exception e) {
@@ -87,6 +106,7 @@ public class HomePage extends TestBase {
 	public void clickOnProducts()
 	{
 		try {
+			wait_element_tobe_clickable(getProducts());
 			getProducts().click();
 		} catch (Exception e) {
 			// TODO: handle exception
