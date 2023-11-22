@@ -24,7 +24,7 @@ public class SgFundFinderPage extends TestBase{
 	public static String SHARECLASS_ACCUMULATING = "//input[contains(@id,'DividendFrequency/Accumulating') and @checked]";
 	public static String SHARECLASS_DISTRIBUTING = "//input[contains(@id,'DividendFrequency/Distributing') and @checked]";
 	public static String DAILYPRICING_SG = "//*[contains(@id,'dailyPricing')]";
-	public static String PERFORMANCE_SG = "//*[contains(@id,'calPerformance')]";
+	public static String PERFORMANCE_SG = "//*[contains(@id,'Performance')]";
 	public static String FUNDFACTS_SG = "//*[contains(@id,'fundFacts')]";
 	public static String DOCUMENTS_SG = "//*[contains(@id,'documents')]";
 	
