@@ -220,7 +220,7 @@ Feature: Daily Production validaton
       |United States| AB All Market Real Return Portfolio |    
    
    @SGPROD   
-  Scenario Outline: Prod Validation for US Fund Details Page   
+  Scenario Outline: Prod Validation for SG Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
     And I Click on Yes Continue Btn
@@ -239,7 +239,34 @@ Feature: Daily Production validaton
     Then I verify Funds are Displayed
     And I click on DailyPricing Tab
     Then I verify Funds are Displayed
+    Then I verify AS OF DATE for SG
+    And I search '<Fundname>' in FF page
       
     Examples: 
+      | Country  | Fundname |
+      | Singapore| AB All Market Income Portfolio |   
+
+      
+  @SGPRODFD   
+  Scenario Outline: Prod Validation for SG Fund Finder Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I Click on Yes Continue Btn
+    And I click on view all funds   
+    Then Validate all Funds 
+      
+    
+    Examples: 
       | Country  | 
-      | Singapore|    
+      | Singapore| 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+        
+      

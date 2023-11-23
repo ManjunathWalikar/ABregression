@@ -39,7 +39,7 @@ public class SgProdStepDefinition {
 	@Then("^Verify Default Currencies for SG$")
 	public void Verify_Default_Currencies()
 	{
-		po.sg_fund_finder_page.validateCurrenciesCNH();
+		po.sg_fund_finder_page.VerifyDefaultCurrenciesSelected();
 	}
 	@When("^I click on Shareclass DD$")
 	public void click_on_Shareclass_DD()
@@ -76,6 +76,20 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_finder_page.clickOnDailyPricingTab();
 	}
-	
+	@Then("^I verify AS OF DATE for SG$")
+	public void verify_as_of_date_sg()
+	{
+		po.sg_fund_finder_page.validateAsOfDateSG();
+	}
+	@When("^I search '(.*)' in FF page$")
+	public void fundsearch_textbox(String fundName)
+	{
+		po.sg_fund_finder_page.searchFund(fundName);
+	}
+	@When("^Validate all Funds$")
+	public void validate_funds()
+	{
+		po.sg_fund_finder_page.ValidateFunds();
+	}
 	
 }
