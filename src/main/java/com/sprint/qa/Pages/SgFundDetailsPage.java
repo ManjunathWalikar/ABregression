@@ -2,6 +2,7 @@ package com.sprint.qa.Pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
@@ -16,6 +17,7 @@ public class SgFundDetailsPage extends TestBase {
 	
 	public static String SG_NAV_VALUE = "(//div[contains(@class,'header-section-value')])[2]"; 	
 	public static String SG_AS_OF_DATE = "(//p[contains(@class,'header-section-date')])[1]";
+	public static String CALENDER_YEAR_PERFORMANCE = "//*[@id='ppCal']";
 	
 	
 	
@@ -25,10 +27,17 @@ public class SgFundDetailsPage extends TestBase {
 	public String getAsOFDate() {
 		return help.get_element_text(SG_AS_OF_DATE);
 	}
+	public WebElement getCalenderYear() {
+		return help.get_element(CALENDER_YEAR_PERFORMANCE);
+	}
 	
 	public SgFundDetailsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
+	}
+	
+	public void clickOnCalenderYearPerformance() {
+		getCalenderYear().click();
 	}
 	
 	public void validateNavValue(String navValue) {
@@ -36,6 +45,40 @@ public class SgFundDetailsPage extends TestBase {
 	}
 	public void validateAsOfDate(String date) {
 		Assert.assertTrue(getAsOFDate().contains(date));
+	}
+	public void validateAnnualPerformanceData() {
+		help.get_element("//td[contains(text(),'Charges Applied')]").click();
+		String YTD = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[1]");
+		String OneYear = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[2]");
+		String ThreeYear = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[3]");
+		String FiveYear = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[4]");
+		String TenYear = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[5]");
+		String SinceInceptionData = help.get_element_text("//td[contains(text(),'Charges Applied')]/following-sibling::td[6]");
+		
+		Assert.assertTrue(YTD.contains(SgFundFinderPage.YTDvalue));
+		Assert.assertTrue(OneYear.contains(SgFundFinderPage.OneYearValue));
+		Assert.assertTrue(ThreeYear.contains(SgFundFinderPage.ThreeYearValue));
+		Assert.assertTrue(FiveYear.contains(SgFundFinderPage.FiveYearValue));
+		Assert.assertTrue(TenYear.contains(SgFundFinderPage.TenYearValue));
+		Assert.assertTrue(SinceInceptionData.contains(SgFundFinderPage.SinceInceptionValue));
+		
+	}
+	public void validateCalenderYearPerformanceData() {
+		help.get_element("//td[contains(text(),'AB All Market Income Portfolio')]").click();
+		String Calender2018 = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[1]");
+		String Calender2019 = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[2]");
+		String Calender2020 = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[3]");
+		String Calender2021 = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[4]");
+		String Calender2022 = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[5]");
+		String CalenderYTD = help.get_element_text("//td[contains(text(),'AB All Market Income Portfolio')]/following-sibling::td[6]");
+		
+		Assert.assertTrue(Calender2018.contains(SgFundFinderPage.DATA_2018));
+		Assert.assertTrue(Calender2019.contains(SgFundFinderPage.DATA_2019));
+		Assert.assertTrue(Calender2020.contains(SgFundFinderPage.DATA_2020));
+		Assert.assertTrue(Calender2021.contains(SgFundFinderPage.DATA_2021));
+		Assert.assertTrue(Calender2022.contains(SgFundFinderPage.DATA_2022));
+		Assert.assertTrue(CalenderYTD.contains(SgFundFinderPage.DATA_YTD));
+		
 	}
 
 }

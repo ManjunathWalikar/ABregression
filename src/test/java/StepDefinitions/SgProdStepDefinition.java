@@ -91,5 +91,36 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_finder_page.ValidateFunds();
 	}
+	@When("^I get Performance Value of '(.*)'$")
+	public void annual_Performance_Value(String fundname)
+	{
+		po.sg_fund_finder_page.validateIndividualFunds(fundname);
+	}
+	@Then("^Validate Annual Performance Values$")
+	public void verify_Annual_Performance_data()
+	{
+		po.sg_fund_details_page.validateAnnualPerformanceData();
+	}
+	@When("^I wait in sec '(.*)'$")
+	public void wait_in_sec(String waittime)
+	{
+		int time = Integer.parseInt(waittime);
+		time = time*1000;
+		try {
+			Thread.sleep(time);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	@When("^I click on Calender Year Performance$")
+	public void click_on_Calender_year()
+	{
+		po.sg_fund_details_page.clickOnCalenderYearPerformance();
+	}
+	@Then("^Validate Calender Year Performance Values$")
+	public void verify_Calender_Year_Performance_data()
+	{
+		po.sg_fund_details_page.validateCalenderYearPerformanceData();
+	}
 	
 }

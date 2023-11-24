@@ -248,7 +248,7 @@ Feature: Daily Production validaton
 
       
   @SGPRODFD   
-  Scenario Outline: Prod Validation for SG Fund Finder Page   
+  Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
     And I Click on Yes Continue Btn
@@ -261,7 +261,25 @@ Feature: Daily Production validaton
       | Singapore| 
       
       
+  @SGPRODIndividualFD   
+  Scenario Outline: Prod Validation for SG Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I Click on Yes Continue Btn
+    And I click on view all funds 
+    And I wait in sec '10'
+    And I click on Performance Tab
+    And I get Performance Value of '<Fundname>'
+    And I click on Pricing and Performance
+    Then Validate Annual Performance Values
+    And I click on Performance Tab
+    And I click on Calender Year Performance
+    Then Validate Calender Year Performance Values
       
+    
+    Examples: 
+      | Country  | Fundname |
+      | Singapore| AB All Market Income Portfolio |   
       
       
       

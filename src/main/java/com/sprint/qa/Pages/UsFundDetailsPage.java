@@ -17,13 +17,13 @@ public class UsFundDetailsPage extends TestBase {
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	Helper help =new Helper();
 	
-	public static String OVERVIEW_LINK ="//a[@id='jnOverview']";
-	public static String PERFORMANCE_LINK ="//a[@id='jnPerformance']";
+	public static String OVERVIEW_LINK ="//*[@id='jnOverview']";
+	public static String PERFORMANCE_LINK ="//*[@id='jnPerformance']";
 	public static String FD_AsOfDate = "(//div[@id='fund-detail-facts']//span[@class='abde-t-regular'])[1]";
 	public static String FD_NAV_VALUE = "(//div[@id='fund-detail-facts']//p[@class='abde-t-bold'])[1]";
 	public static String YIELD_and_DISTRIBUTION = "//a[@id='jnYield']";
-	public static String HOLDINGS_LINK = "//a[@id='jnHoldings']";
-	public static String LITERATURE_LINK = "//a[@id='jnLiterature']";
+	public static String HOLDINGS_LINK = "//*[@id='jnHoldings']";
+	public static String LITERATURE_LINK = "//*[@id='jnLiterature']";
 	public static String DAILY_AS_OF = "//span[contains(@title,'Daily As of')]";
 	public static String MONTH_END_AS_OF = "//span[contains(@title,'Month End As of')]";
 	public static String QUARTER_END_AS_OF = "//span[contains(@title,'Quarter End As of')]]";
