@@ -27,8 +27,8 @@ Feature: Daily Production validaton
       | Country     |Perticular |
       |United States|AB All China Equity Portfolio|
       |United States|AB All Market Real Return Portfolio|
-      |United States|AB All Market Total Return Portfolio|
-      |United States|AB Arizona Portfolio|
+      #|United States|AB All Market Total Return Portfolio|
+      #|United States|AB Arizona Portfolio|
 
       
       
@@ -161,7 +161,7 @@ Feature: Daily Production validaton
       |United States|    
       
       
-  @FundDetailProdUS   
+  @ProdValidation   
   Scenario Outline: Prod Validation for US Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -219,7 +219,7 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       |United States| AB All Market Real Return Portfolio |    
    
-   @SGPROD   
+   @ProdValidation   
   Scenario Outline: Prod Validation for SG Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -247,7 +247,7 @@ Feature: Daily Production validaton
       | Singapore| AB All Market Income Portfolio |   
 
       
-  @SGPRODFD   
+  @ProdValidation   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -261,7 +261,7 @@ Feature: Daily Production validaton
       | Singapore| 
       
       
-  @SGPRODIndividualFD   
+  @ProdValidation   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -273,6 +273,7 @@ Feature: Daily Production validaton
     And I click on Pricing and Performance
     Then Validate Annual Performance Values
     And I click on Performance Tab
+    And I wait in sec '5'
     And I click on Calender Year Performance
     Then Validate Calender Year Performance Values
       
