@@ -122,5 +122,30 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_details_page.validateCalenderYearPerformanceData();
 	}
+	@When("^I Click on Fund facts$")
+	public void Click_on_Fund_facts()
+	{
+		po.sg_fund_details_page.clickOnFundFactVehicle();
+	}
+	@Then("^I validate Fund Inception date in FD Page$")
+	public void validate_Fund_Inception_date_in_FD_Page()
+	{
+		po.sg_fund_details_page.ValidateFundInceptionDate();
+	}
+	@Then("^I Validate Distribution Table in FD page$")
+	public void validate_Distribution_Table_in_FD_Page()
+	{
+		po.sg_fund_details_page.ValidateDistributionTable();
+	}
+	@When("^I Click On Portfolio Composition$")
+	public void Click_on_Portfolio_Composition()
+	{
+		po.sg_fund_details_page.clickOnPortfolioComposition();
+	}
+	@When("^I Click On Risks$")
+	public void Click_on_Risks()
+	{
+		po.sg_fund_details_page.clickOnRiskVehicle();
+	}
 	
 }

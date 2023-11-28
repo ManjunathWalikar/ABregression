@@ -474,6 +474,12 @@ public class UsFundFinderPage extends TestBase{
 	/**
 	 * Common methods 
 	 */
+	public void validateNAV(String nav) {
+		int navValue = Integer.parseInt(nav);
+		if(navValue<0) {
+			Assert.fail();
+		}
+	}
 	public void validateFunds()
 	{
 		String as_Of_date = getAsOfDate();
@@ -484,6 +490,7 @@ public class UsFundFinderPage extends TestBase{
 			scrollintoview(fund);
 			String fundName = fund.getText();
 			String NAV_value = getNAVdata(fundName);
+			validateNAV(NAV_value);
 			fund.click();
 			help.switchWindowFDpage(fundName);
 			page.us_fund_details_page.validateAsOfDate(as_Of_date);

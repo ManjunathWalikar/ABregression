@@ -21,7 +21,7 @@ public class UsFundDetailsPage extends TestBase {
 	public static String PERFORMANCE_LINK ="//*[@id='jnPerformance']";
 	public static String FD_AsOfDate = "(//div[@id='fund-detail-facts']//span[@class='abde-t-regular'])[1]";
 	public static String FD_NAV_VALUE = "(//div[@id='fund-detail-facts']//p[@class='abde-t-bold'])[1]";
-	public static String YIELD_and_DISTRIBUTION = "//a[@id='jnYield']";
+	public static String YIELD_and_DISTRIBUTION = "//*[@id='jnYield']";
 	public static String HOLDINGS_LINK = "//*[@id='jnHoldings']";
 	public static String LITERATURE_LINK = "//*[@id='jnLiterature']";
 	public static String DAILY_AS_OF = "//span[contains(@title,'Daily As of')]";

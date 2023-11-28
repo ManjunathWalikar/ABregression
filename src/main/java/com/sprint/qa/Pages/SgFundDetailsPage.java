@@ -18,6 +18,11 @@ public class SgFundDetailsPage extends TestBase {
 	public static String SG_NAV_VALUE = "(//div[contains(@class,'header-section-value')])[2]"; 	
 	public static String SG_AS_OF_DATE = "(//p[contains(@class,'header-section-date')])[1]";
 	public static String CALENDER_YEAR_PERFORMANCE = "//*[@id='ppCal']";
+	public static String FUND_FACTS_VEHICLE = "//*[@id='jnFacts']";
+	public static String FUND_INCEPTION_DATE = "//td[contains(text(),'Fund Inception Date')]/following-sibling::td[contains(@class,'ab-table-right')]";
+	public static String Distribution_Table = "//div[contains(@id,'fund-detail-yield-distribution')]//div[contains(@id,'highcharts')]";
+	public static String PORTFOLIO_COMPOSITION = "//*[@id='jnComposition']";
+	public static String RISKS_VEHICLE = "//*[@id='jnRisks']";
 	
 	
 	
@@ -30,10 +35,41 @@ public class SgFundDetailsPage extends TestBase {
 	public WebElement getCalenderYear() {
 		return help.get_element(CALENDER_YEAR_PERFORMANCE);
 	}
+	public WebElement getFundFacts() {
+		return help.get_element(FUND_FACTS_VEHICLE);
+	}
+	public String getFundInceptionDate() {
+		return help.get_element_text(FUND_INCEPTION_DATE);
+	}
+	public WebElement getDistributionTable() {
+		return help.get_element(Distribution_Table);
+	}
+	public WebElement getPortfolioComposition() {
+		return help.get_element(PORTFOLIO_COMPOSITION);
+	}
+	public WebElement getRisksVehicle() {
+		return help.get_element(RISKS_VEHICLE);
+	}
 	
 	public SgFundDetailsPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
+	}
+	public void clickOnRiskVehicle() {
+		getRisksVehicle().click();
+	}
+	public void ValidateFundInceptionDate() {
+		Assert.assertTrue(getFundInceptionDate().contains(SgFundFinderPage.INCEPTION_DATE));
+	}
+	public void ValidateDistributionTable() {
+		wait_element_tobe_displayed(getDistributionTable());
+		Assert.assertTrue(getDistributionTable().isDisplayed());
+	}
+	public void clickOnFundFactVehicle() {
+		getFundFacts().click();
+	}
+	public void clickOnPortfolioComposition() {
+		getPortfolioComposition().click();
 	}
 	
 	public void clickOnCalenderYearPerformance() {

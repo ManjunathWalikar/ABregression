@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Subscriptions BDD Cucumber Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Nov 27, 2023 12:52:15 pm</span></a>
+<a href="#"><span class="badge badge-primary">Nov 28, 2023 05:53:24 pm</span></a>
 </li>
 </ul>
 </div>
@@ -57,11 +57,6 @@
 <span class="ico"><i class="fa fa-tag"></i></span>
 </a>
 </li>
-<li class="nav-item dropdown" onclick="toggleView('exception-view')">
-<a id="nav-exception" class="dropdown-toggle" href="#">
-<span class="ico"><i class="fa fa-bug"></i></span>
-</a>
-</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -71,25 +66,25 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Nov 27, 2023 12:52:15 pm</h3>
+<h3>Nov 28, 2023 05:53:24 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Nov 27, 2023 01:46:04 pm</h3>
+<h3>Nov 28, 2023 05:54:54 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Features Passed</p>
-<h3>0</h3>
+<h3>1</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-fail">Features Failed</p>
-<h3>1</h3>
+<h3>0</h3>
 </div></div>
 </div>
 </div>
@@ -105,12 +100,12 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='0%'>
-<b>0</b> features passed
+<div><small data-tooltip='100%'>
+<b>1</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='100%'><b>1</b> features failed,
+<small data-tooltip='0%'><b>0</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
@@ -128,9 +123,9 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='77%'><b>7</b> scenarios passed</small></div>
+<div><small data-tooltip='100%'><b>1</b> scenarios passed</small></div>
 <div>
-<small data-tooltip='22%'><b>2</b> scenarios failed,
+<small data-tooltip='0%'><b>0</b> scenarios failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
@@ -148,10 +143,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='85%'><b>126</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>21</b> steps passed</small></div>
 <div>
-<small data-tooltip='1%'><b>2</b> steps failed,
-<b>19</b> skipped, <b data-tooltip='%'>0</b> others
+<small data-tooltip='0%'><b>0</b> steps failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -167,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Daily Production validaton":3226.108
+"Daily Production validaton":86.876
 };
 </script>
 <div class="row">
@@ -178,19 +173,19 @@ var timeline = {
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
 <td>@Regression</td>
-<td>7</td>
-<td>2</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>77.778%</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 <tr>
-<td>@ProdValidation</td>
-<td>7</td>
-<td>2</td>
+<td>@SGProdValidation2</td>
+<td>1</td>
 <td>0</td>
 <td>0</td>
-<td>77.778%</td>
+<td>0</td>
+<td>100%</td>
 </tr>
 </tbody>
 </table></div>
@@ -201,21 +196,21 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 0,
-failParent: 1,
+passParent: 1,
+failParent: 0,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
-passChild: 7,
-failChild: 2,
+passChild: 1,
+failChild: 0,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 126,
-failGrandChild: 2,
+passGrandChild: 21,
+failGrandChild: 0,
 warningGrandChild: 0,
-skipGrandChild: 19,
+skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
 };
@@ -229,7 +224,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -237,31 +232,31 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Regression</a><a class="dropdown-item" href="#">@ProdValidation</a>
+<a class="dropdown-item" href="#">@Regression</a><a class="dropdown-item" href="#">@SGProdValidation2</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="fail" test-id="1"
+        <li class="test-item"  status="pass" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">Daily Production validaton</p>
             <p class="text-sm">
-              <span>12:52:16 pm</span> / <span>00:53:46:108</span>
-              <span class="badge fail-bg log float-right">Fail</span>
+              <span>5:53:27 pm</span> / <span>00:01:26:876</span>
+              <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-fail">Daily Production validaton</h5>
-<span class='badge badge-success'>11.27.2023 12:52:16 pm</span>
-<span class='badge badge-danger'>11.27.2023 1:46:02 pm</span>
-<span class='badge badge-default'>00:53:46:108</span>
+<h5 class="test-status text-pass">Daily Production validaton</h5>
+<span class='badge badge-success'>11.28.2023 5:53:27 pm</span>
+<span class='badge badge-danger'>11.28.2023 5:54:54 pm</span>
+<span class='badge badge-default'>00:01:26:876</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -273,870 +268,14 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for SG Fund Details Page</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Mutual Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify 'AB All China Equity Portfolio' Fund</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="12"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Mutual Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify 'AB All Market Real Return Portfolio' Fund</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US ETF Funds</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="22"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US ETF Funds</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on ETF Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each ETF Funds</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>US Fund Finder Page Validation</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="32"><span class="badge log pass-bg mr-2">Pass</span>US Fund Finder Page Validation</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Equities in AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify the Funds are Equities</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Fixed Income in AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify the Funds are Fixed Income</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Multi Asset in AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify the Funds are Multi Asset</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Alternatives in AssetClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify the Funds are Alternatives</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Styles DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Equity Core in Styles DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Equity Core Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Region DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Global in Region DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Global Funds Count</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Global in Region DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select ShareClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select Advisor in ShareClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I select ShareClass DD</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Total Mutual Funds Count</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Reset Filters</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Daily Pricing and Yields</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Funds are Loaded</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Literature</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Funds are Loaded</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Performance</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Quarter End As Of</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Funds are Loaded</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Month End As Of</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Funds are Loaded</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Show Benchmark</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Benchmark Data</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Click on Hide Benchmark</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify QuickView of Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Daily Pricing and Yields</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Validate As Of Date</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I search 'AB All China Equity Portfolio' in FF page FundSearch</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I validate FD page of 'AB All China Equity Portfolio'</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="85"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US Fund Details Page</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="86"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for US Fund Details Page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Mutual Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each mutual Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on SMAS Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each SMAS Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on ETF Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each ETF Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Model Portfolio Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each Model Portfolio Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Closed End Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each Closed End Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Veriable Product Series Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then Verify Each Veriable Product Series Funds</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="105"><span class="badge log pass-bg mr-2">Pass</span>US Mutual Fund Details Page Validation</div>
-      </div>
-    </div>
-        <div class="scenario_outline collapse">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="106"><span class="badge log pass-bg mr-2">Pass</span>US Mutual Fund Details Page Validation</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 collapse">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'United States' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Investment</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Products</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I click on Mutual Funds</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I get as of Date From FF page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I get NAV value of 'AB All Market Real Return Portfolio' FF page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>When I Validate As Of Date</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Click On given 'AB All Market Real Return Portfolio'</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Switch Window to 'AB All Market Real Return Portfolio'</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Validate As Of Date in FD Page</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Validate NAV Value</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Click On Overview</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Key Facts</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Pricing and Performance</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Validate Daily Nav As Of Value</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I Validate Hypothetical Growth</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I validate NAV History Chart</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click On Yields and Distribution</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Validate Distribution Table</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Holdings and Characteristics</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I Verify Holdings Table</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on Literature Vehicle</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on select all Literature checkbox</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>Then I verify Document Selected PopUp</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I click on select all Literature checkbox</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step pass-bg">
-                    <span>And I close current Browser</span>
-      <div>
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="136"><span class="badge log fail-bg mr-2">Fail</span>Prod Validation for SG Fund Finder Page</div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="137"><span class="badge log fail-bg mr-2">Fail</span>Prod Validation for SG Fund Finder Page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'Singapore' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Individual Investors')]"}
-  (Session info: chrome=119.0.6045.160)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'NULAPTOP-563', ip: '192.168.29.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\MANJUN~1.WAL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64806}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 02492cf8a7b0c21d1184bf526db5c63b
-*** Element info: {Using=xpath, value=//button[contains(text(),'Individual Investors')]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor18.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.sprint.qa.helper.Helper.get_element(Helper.java:406)
-	at com.sprint.qa.Pages.HomePage.getIndividualInvestor(HomePage.java:36)
-	at com.sprint.qa.Pages.HomePage.clickOnIndividualInvestor(HomePage.java:91)
-	at StepDefinitions.Reg02_Hyperlinks_StepDefinition.click_on_Individual_investor(Reg02_Hyperlinks_StepDefinition.java:84)
-	at ✽.I Click on Individual Investor(file:///C:/Users/manjunath.walikar/git/repository/SubscriptionsBDDPOMFramework/src/main/resources/features/features_Reg/DailyValidation.feature:225)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I Click on Yes Continue Btn</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on view all funds</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When I click on Currencies DD</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify Default Currencies for SG</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>When I click on Shareclass DD</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Verify Default Shareclass For SG</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on Performance Tab</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then I verify Funds are Displayed</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on Fund Facts</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then I verify Funds are Displayed</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on Documents</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then I verify Funds are Displayed</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on DailyPricing Tab</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then I verify Funds are Displayed</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then I verify AS OF DATE for SG</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I search 'AB All Market Income Portfolio' in FF page</span>
-      <div>Step skipped
-      </div>
-                  </div>
-              </div>
-            </div>
-        </div>
-  </div>
-  <div class="card">
-    <div class="card-header" role="tab">
-      <div class="card-title">
-        <div class="node" id="158"><span class="badge log fail-bg mr-2">Fail</span>Prod Validation for SG Fund Details Page</div>
-      </div>
-    </div>
-        <div class="scenario_outline ">
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="159"><span class="badge log fail-bg mr-2">Fail</span>Prod Validation for SG Fund Details Page</div>
-                </div>
-              </div>
-              <div class="card-body mt-3 ">
-                  <div class="step pass-bg">
-                    <span>Given Navigate to 'Singapore' site</span>
-      <div>
-      </div>
-                  </div>
-                  <div class="step fail-bg">
-                    <span>When I Click on Individual Investor</span>
-      <div>
-        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[contains(text(),'Individual Investors')]"}
-  (Session info: chrome=119.0.6045.160)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
-Build info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'
-System info: host: 'NULAPTOP-563', ip: '192.168.29.9', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\MANJUN~1.WAL\AppDa...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64949}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fce12fe3bd03d9ac909221283b27d7ae
-*** Element info: {Using=xpath, value=//button[contains(text(),'Individual Investors')]}
-	at jdk.internal.reflect.GeneratedConstructorAccessor18.newInstance(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at com.sprint.qa.helper.Helper.get_element(Helper.java:406)
-	at com.sprint.qa.Pages.HomePage.getIndividualInvestor(HomePage.java:36)
-	at com.sprint.qa.Pages.HomePage.clickOnIndividualInvestor(HomePage.java:91)
-	at StepDefinitions.Reg02_Hyperlinks_StepDefinition.click_on_Individual_investor(Reg02_Hyperlinks_StepDefinition.java:84)
-	at ✽.I Click on Individual Investor(file:///C:/Users/manjunath.walikar/git/repository/SubscriptionsBDDPOMFramework/src/main/resources/features/features_Reg/DailyValidation.feature:253)
-</textarea>
-      
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I Click on Yes Continue Btn</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>And I click on view all funds</span>
-      <div>Step skipped
-      </div>
-                  </div>
-                  <div class="step skip-bg">
-                    <span>Then Validate all Funds</span>
-      <div>Step skipped
-      </div>
-                  </div>
-              </div>
-            </div>
-            <div class="card-body l1">
-              <div class="card-header">
-                <div class="card-title outline-child">
-                  <div class="node" id="167"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for SG Fund Details Page</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for SG Fund Details Page</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -1205,6 +344,46 @@ Session ID: fce12fe3bd03d9ac909221283b27d7ae
       <div>
       </div>
                   </div>
+                  <div class="step pass-bg">
+                    <span>And I Click On Overview</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I Click on Fund facts</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I validate Fund Inception date in FD Page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click On Yields and Distribution</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I Validate Distribution Table in FD page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I Click On Portfolio Composition</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I Click On Risks</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click on Literature Vehicle</span>
+      <div>
+      </div>
+                  </div>
               </div>
             </div>
         </div>
@@ -1232,17 +411,15 @@ Session ID: fce12fe3bd03d9ac909221283b27d7ae
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>7</span>
-<span class='badge log badge-danger'>2</span>
+<span class='badge log pass-bg'>1</span>
 </span>
 <p class="name">@Regression</p>
-<p class="duration text-sm">9 tests</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
 <h4>@Regression</h4>
-<span status="pass" class='badge log pass-bg'>7 passed</span>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1255,89 +432,9 @@ Session ID: fce12fe3bd03d9ac909221283b27d7ae
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:52:16 pm</td>
+<td>17:53:27 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Prod Validation for US</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:54:50 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='12'>Prod Validation for US</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:56:03 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='22'>Prod Validation for US ETF Funds</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US ETF Funds</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:05:17 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='32'>US Fund Finder Page Validation</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.US Fund Finder Page Validation</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:08:08 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='86'>Prod Validation for US Fund Details Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US Fund Details Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:30:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='106'>US Mutual Fund Details Page Validation</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.US Mutual Fund Details Page Validation</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:33:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='137'>Prod Validation for SG Fund Finder Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Finder Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:36:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='159'>Prod Validation for SG Fund Details Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Details Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:39:13 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='167'>Prod Validation for SG Fund Details Page</a>
+<a href="#" class="linked" test-id='1' id='3'>Prod Validation for SG Fund Details Page</a>
 <div class="">
 <span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Details Page</span>
 </div>
@@ -1350,17 +447,15 @@ Session ID: fce12fe3bd03d9ac909221283b27d7ae
 <li class="test-item">
 <div class="test-detail">
 <span class="meta">
-<span class='badge log pass-bg'>7</span>
-<span class='badge log badge-danger'>2</span>
+<span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@ProdValidation</p>
-<p class="duration text-sm">9 tests</p>
+<p class="name">@SGProdValidation2</p>
+<p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@ProdValidation</h4>
-<span status="pass" class='badge log pass-bg'>7 passed</span>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
+<h4>@SGProdValidation2</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
 <thead>
@@ -1373,153 +468,11 @@ Session ID: fce12fe3bd03d9ac909221283b27d7ae
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>12:52:16 pm</td>
+<td>17:53:27 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Prod Validation for US</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:54:50 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='12'>Prod Validation for US</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>12:56:03 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='22'>Prod Validation for US ETF Funds</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US ETF Funds</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:05:17 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='32'>US Fund Finder Page Validation</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.US Fund Finder Page Validation</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:08:08 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='86'>Prod Validation for US Fund Details Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for US Fund Details Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:30:18 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='106'>US Mutual Fund Details Page Validation</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.US Mutual Fund Details Page Validation</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:33:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='137'>Prod Validation for SG Fund Finder Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Finder Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:36:31 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='159'>Prod Validation for SG Fund Details Page</a>
+<a href="#" class="linked" test-id='1' id='3'>Prod Validation for SG Fund Details Page</a>
 <div class="">
 <span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Details Page</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>13:39:13 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='167'>Prod Validation for SG Fund Details Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Details Page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<div class="test-content scrollable">
-<div class="test-content-detail">
-<div class="detail-body"></div>
-</div>
-</div>
-</div><div class="test-wrapper row view exception-view attributes-view">
-<div class="test-list">
-<div class="test-list-tools">
-<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
-<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
-</div>
-<div class="test-list-wrapper scrollable">
-<ul class="test-list-item">
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>2</span>
-</span>
-<p class="name">org.openqa.selenium.NoSuchElementException</p>
-<p class="duration text-sm">2 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>org.openqa.selenium.NoSuchElementException</h4>
-<span status="fail" class='badge log badge-danger'>2 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:34:49 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='140'>When I Click on Individual Investor</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Finder Page.When I Click on Individual Investor</span>
-</div>
-</td>
-</tr>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>13:37:32 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='162'>When I Click on Individual Investor</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for SG Fund Details Page.When I Click on Individual Investor</span>
 </div>
 </td>
 </tr>

@@ -135,6 +135,9 @@ public class SgFundFinderPage extends TestBase{
 		{
 			asofdate = currentDate-4;
 		}
+		else if (day==2) {
+			asofdate = currentDate-4;
+		}
 		else if (day==6) {
 			asofdate = currentDate-2;
 		}
@@ -232,6 +235,7 @@ public class SgFundFinderPage extends TestBase{
 				System.out.println(navValue);
 				i++;
 			}
+			page.us_fund_finder_page.validateNAV(navValue);
 			eachFund.click();
 			Assert.assertTrue(driver.getTitle().contains(fundname));
 			page.sg_fund_details_page.validateNavValue(navValue);

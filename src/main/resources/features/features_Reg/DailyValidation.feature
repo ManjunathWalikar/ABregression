@@ -219,7 +219,7 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       |United States| AB All Market Real Return Portfolio |    
    
-   @ProdValidation   
+   @SGProdValidation   
   Scenario Outline: Prod Validation for SG Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -247,7 +247,7 @@ Feature: Daily Production validaton
       | Singapore| AB All Market Income Portfolio |   
 
       
-  @ProdValidation   
+  @SGProdValidation   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -261,7 +261,7 @@ Feature: Daily Production validaton
       | Singapore| 
       
       
-  @ProdValidation   
+  @SGProdValidation2   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -276,7 +276,14 @@ Feature: Daily Production validaton
     And I wait in sec '5'
     And I click on Calender Year Performance
     Then Validate Calender Year Performance Values
-      
+    And I Click On Overview
+    And I Click on Fund facts
+    Then I validate Fund Inception date in FD Page
+    And I click On Yields and Distribution
+    Then I Validate Distribution Table in FD page
+    And I Click On Portfolio Composition
+    And I Click On Risks
+    And I click on Literature Vehicle
     
     Examples: 
       | Country  | Fundname |
