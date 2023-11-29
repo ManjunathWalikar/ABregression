@@ -32,7 +32,7 @@ Feature: Daily Production validaton
 
       
       
-  @ProdValidation
+  @ETF
   Scenario Outline: Prod Validation for US ETF Funds
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -261,7 +261,7 @@ Feature: Daily Production validaton
       | Singapore| 
       
       
-  @SGProdValidation2   
+  @SGProdValidation   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  

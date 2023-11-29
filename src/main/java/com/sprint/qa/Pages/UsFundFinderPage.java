@@ -475,8 +475,9 @@ public class UsFundFinderPage extends TestBase{
 	 * Common methods 
 	 */
 	public void validateNAV(String nav) {
-		int navValue = Integer.parseInt(nav);
-		if(navValue<0) {
+		
+		double navValue = Double.parseDouble(nav);
+		if(navValue < 0) {
 			Assert.fail();
 		}
 	}

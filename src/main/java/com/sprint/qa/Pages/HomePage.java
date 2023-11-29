@@ -83,24 +83,21 @@ public class HomePage extends TestBase {
 	public void clickOnIndividualInvestor()
 	{
 		try {
-			wait_element_tobe_clickable(getIndividualInvestor());
+			Thread.sleep(10000);
+			wait_element_tobe_displayed(getIndividualInvestor());
 			getIndividualInvestor().click();
-			Thread.sleep(5000);
 		} catch (Exception e) {
-			// TODO: handle exception
-			scrollandclick(getIndividualInvestor());
+			e.printStackTrace();
 		}
 	}
 	public void clickOnInvestment()
 	{
 		try {
-			Thread.sleep(3000);
+			Thread.sleep(6000);
 			wait_element_tobe_clickable(getInvestment());
 			getInvestment().click();
-			Thread.sleep(3000);
 		} catch (Exception e) {
-			// TODO: handle exception
-			scrollandclick(getInvestment());
+			e.printStackTrace();
 		}
 	}
 	public void clickOnProducts()
@@ -109,8 +106,7 @@ public class HomePage extends TestBase {
 			wait_element_tobe_clickable(getProducts());
 			getProducts().click();
 		} catch (Exception e) {
-			// TODO: handle exception
-			scrollandclick(getProducts());
+			e.printStackTrace();
 		}
 	}
 
