@@ -230,7 +230,7 @@ public class SgFundFinderPage extends TestBase{
 			String fundname = eachFund.getText();
 			System.out.println(fundname);
 			String navValue = "";
-			if(i<totalFunds) {
+			if(i<=totalFunds) {
 				navValue = help.get_element_text("//tbody//tr["+i+"]//td[5]");
 				System.out.println(navValue);
 				i++;

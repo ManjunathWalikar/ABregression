@@ -117,10 +117,20 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_details_page.clickOnCalenderYearPerformance();
 	}
-	@Then("^Validate Calender Year Performance Values$")
-	public void verify_Calender_Year_Performance_data()
+	@Then("^Validate Calender Year Performance Values for '(.*)'$")
+	public void verify_Calender_Year_Performance_data(String name)
 	{
-		po.sg_fund_details_page.validateCalenderYearPerformanceData();
+		po.sg_fund_details_page.validateCalenderYearPerformanceData(name);
+	}
+	@Then("^Validate unhedged Calender Year Performance Values for '(.*)'$")
+	public void verify_Unhedged_Calender_Year_Performance_data(String name)
+	{
+		po.sg_fund_details_page.validateCalenderYearPerformanceDataforUnhedged(name);
+	}
+	@Then("^Validate Unhedged Annual Performance Values$")
+	public void verify_Unhedged_Annual_Performance_data()
+	{
+		po.sg_fund_details_page.validateAnnualPerformanceDataforUnhedged();
 	}
 	@When("^I Click on Fund facts$")
 	public void Click_on_Fund_facts()
@@ -146,6 +156,21 @@ public class SgProdStepDefinition {
 	public void Click_on_Risks()
 	{
 		po.sg_fund_details_page.clickOnRiskVehicle();
+	}
+	@When("^I Click on clear all Filter$")
+	public void Click_on_clear_all_Filter()
+	{
+		po.sg_fund_details_page.clickOnClearAllFilters();
+	}
+	@When("^I select Unhedged$")
+	public void Click_on_Unhedged()
+	{
+		po.sg_fund_details_page.clickOnUnhedged();
+	}
+	@When("^I Click On Annual Performance$")
+	public void Click_on_Annual_Performance()
+	{
+		po.sg_fund_details_page.clickOnAnnualPerformance();
 	}
 	
 }

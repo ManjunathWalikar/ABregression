@@ -275,7 +275,7 @@ Feature: Daily Production validaton
     And I click on Performance Tab
     And I wait in sec '5'
     And I click on Calender Year Performance
-    Then Validate Calender Year Performance Values
+    Then Validate Calender Year Performance Values for '<Fundname>'
     And I Click On Overview
     And I Click on Fund facts
     Then I validate Fund Inception date in FD Page
@@ -289,10 +289,100 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       | Singapore| AB All Market Income Portfolio |   
       
+  @SGProdUnhedged   
+  Scenario Outline: Prod Validation for SG Unhedged Fund   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I Click on Yes Continue Btn
+    And I click on view all funds
+    And I Click on clear all Filter
+    When I click on Currencies DD    
+    And I select Unhedged
+    When I click on Currencies DD 
+    And I wait in sec '10'
+    And I click on Performance Tab
+    And I get Performance Value of '<Fundname>'
+    And I click on Performance Tab
+    And I Click On Annual Performance
+    Then Validate Unhedged Annual Performance Values
+    And I click on Performance Tab
+    And I wait in sec '5'
+    And I click on Calender Year Performance
+    Then Validate unhedged Calender Year Performance Values for '<Fundname>'
+    And I Click On Overview
+    And I Click on Fund facts
+    And I click On Yields and Distribution
+    Then I Validate Distribution Table in FD page
+    And I Click On Portfolio Composition
+    And I Click On Risks
+    And I click on Literature Vehicle
       
-      
-      
-      
+    Examples: 
+      | Country  | Fundname |
+      | Singapore| AB All Market Income Portfolio |  
       
         
+  @HKProdValidation   
+  Scenario Outline: Prod Validation for SG Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I wait in sec '10'
+    And I Click on Yes Continue Btn
+    And I click on view all funds  
+    And I wait in sec '10'
+    And I click on Performance Tab
+    And I get Performance Value of '<Fundname>'
+    And I click on Pricing and Performance
+    Then Validate Annual Performance Values
+    And I click on Performance Tab
+    And I wait in sec '5'
+    And I click on Calender Year Performance
+    Then Validate Calender Year Performance Values for '<Fundname>'
+    
+    Examples: 
+      | Country  | Fundname |
+      | Hong Kong| AB All Market Income Portfolio |  
       
+      
+  @HKProdValidation1   
+  Scenario Outline: Prod Validation for SG Fund Finder Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor 
+    And I wait in sec '10' 
+    And I Click on Yes Continue Btn
+    And I click on view all funds
+    #And I select AssetClass DD
+    #And I select Equities in AssetClass DD
+    #When I click on Currencies DD
+    #Then Verify Default Currencies for SG
+    #When I click on Shareclass DD
+    #Then Verify Default Shareclass For SG
+    And I click on Performance Tab
+    Then I verify Funds are Displayed
+    And I click on Fund Facts
+    Then I verify Funds are Displayed
+    And I click on Documents
+    Then I verify Funds are Displayed
+    And I click on DailyPricing Tab
+    Then I verify Funds are Displayed
+    Then I verify AS OF DATE for SG
+    And I search '<Fundname>' in FF page
+      
+    Examples: 
+      | Country  | Fundname |
+      | Hong Kong| AB All Market Income Portfolio |   
+
+      
+  @HKProdValidation12   
+  Scenario Outline: Prod Validation for SG Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I wait in sec '10'
+    And I Click on Yes Continue Btn
+    And I click on view all funds   
+    Then Validate all Funds 
+      
+    
+    Examples: 
+      | Country  | 
+      | Hong Kong|    
