@@ -2,6 +2,7 @@ package com.sprint.qa.Pages;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
 import com.sprint.qa.base.PageObjects;
@@ -12,7 +13,6 @@ import com.sprint.qa.helper.LoggerHelper;
 public class HkFundFinderPage extends TestBase {
 	Logger log = LoggerHelper.getLogger(LoggerHelper.class);
 	Helper help =new Helper();
-	PageObjects po = new PageObjects();
 	
 	public static String YTDvalue;
 	public static String OneYearValue;
@@ -27,23 +27,41 @@ public class HkFundFinderPage extends TestBase {
 	public static String DATA_2021;
 	public static String DATA_2022;
 	public static String DATA_YTD;
+	public static String OneMonthValue;
+	public static String LANGUAGE_DD = "//a[contains(text(),'English')]";
+	public static String CHINESE_LANGUAGE = "//a[contains(text(),'中文')]";
 	
 	
+	
+	public WebElement getLanguageDD() {
+		return help.get_element(LANGUAGE_DD);
+	}
+	public WebElement getChineseLanguage() {
+		return help.get_element(CHINESE_LANGUAGE);
+	}
 	public HkFundFinderPage(WebDriver driver)
 	{
 		PageFactory.initElements(driver, true);
 	}
 	
+	public void clickOnChineseLanguage() {
+		getChineseLanguage().click();
+	}
+	public void clickOnLanguageDD() {
+		getLanguageDD().click();
+	}
+	
 	public void validateIndividualFunds(String fundName) {
-		YTDvalue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[4]");
+		YTDvalue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[5]");
+		OneMonthValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[4]");
+		OneYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[6]");
+		ThreeYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[7]");
+		FiveYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[8]");
+		TenYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[9]");
+		SinceInceptionValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[10]");
+		INCEPTION_DATE = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[11]");
 		
-		OneYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[5]");
-		ThreeYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[6]");
-		FiveYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[7]");
-		TenYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[8]");
-		SinceInceptionValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[9]");
-		INCEPTION_DATE = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[10]");
-		
+		System.out.println(OneMonthValue);
 		System.out.println(YTDvalue);
 		System.out.println(OneYearValue);
 		System.out.println(ThreeYearValue);
@@ -52,7 +70,7 @@ public class HkFundFinderPage extends TestBase {
 		System.out.println(SinceInceptionValue);
 		System.out.println(INCEPTION_DATE);
 		
-		po.sg_fund_finder_page.clickOnCalenderData();
+		page.sg_fund_finder_page.clickOnCalenderData();
 		wait_element_tobe_clickable("//a[contains(text(),'"+fundName+"')]");
 		DATA_2018 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[4]");
 		DATA_2019 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[5]");

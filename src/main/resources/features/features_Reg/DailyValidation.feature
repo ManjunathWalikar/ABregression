@@ -219,7 +219,7 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       |United States| AB All Market Real Return Portfolio |    
    
-   @SGProdValidation   
+   @HKProdValidation12   
   Scenario Outline: Prod Validation for SG Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -247,7 +247,7 @@ Feature: Daily Production validaton
       | Singapore| AB All Market Income Portfolio |   
 
       
-  @SGProdValidation   
+  @HKProdValidation12   
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -261,7 +261,8 @@ Feature: Daily Production validaton
       | Singapore| 
       
       
-  @SGProdValidation   
+  @SGProdValidation12 
+  @Prod  
   Scenario Outline: Prod Validation for SG Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -289,7 +290,8 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       | Singapore| AB All Market Income Portfolio |   
       
-  @SGProdUnhedged   
+  @HKProdValidation12  
+  @Prod 
   Scenario Outline: Prod Validation for SG Unhedged Fund   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -303,7 +305,7 @@ Feature: Daily Production validaton
     And I click on Performance Tab
     And I get Performance Value of '<Fundname>'
     And I click on Performance Tab
-    And I Click On Annual Performance
+    And I click on Annual Performance
     Then Validate Unhedged Annual Performance Values
     And I click on Performance Tab
     And I wait in sec '5'
@@ -322,8 +324,9 @@ Feature: Daily Production validaton
       | Singapore| AB All Market Income Portfolio |  
       
         
-  @HKProdValidation   
-  Scenario Outline: Prod Validation for SG Fund Details Page   
+  @HKProdValidationFF  
+  @Prod 
+  Scenario Outline: Prod Validation for HK Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
     And I wait in sec '10'
@@ -331,8 +334,9 @@ Feature: Daily Production validaton
     And I click on view all funds  
     And I wait in sec '10'
     And I click on Performance Tab
-    And I get Performance Value of '<Fundname>'
+    And I get Performance Value of HK '<Fundname>'
     And I click on Pricing and Performance
+    And I click on Annual Performance
     Then Validate Annual Performance Values
     And I click on Performance Tab
     And I wait in sec '5'
@@ -344,19 +348,20 @@ Feature: Daily Production validaton
       | Hong Kong| AB All Market Income Portfolio |  
       
       
-  @HKProdValidation1   
-  Scenario Outline: Prod Validation for SG Fund Finder Page   
+  @HKProdValidation12
+  @Prod
+  @HKFF   
+  Scenario Outline: Prod Validation for HK Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor 
     And I wait in sec '10' 
     And I Click on Yes Continue Btn
     And I click on view all funds
-    #And I select AssetClass DD
-    #And I select Equities in AssetClass DD
-    #When I click on Currencies DD
-    #Then Verify Default Currencies for SG
-    #When I click on Shareclass DD
-    #Then Verify Default Shareclass For SG
+    When I click on Currencies DD
+    Then Verify Default Currencies for SG
+    When I click on Shareclass DD
+    Then Verify Default Shareclass For SG
+    When I click on Shareclass DD
     And I click on Performance Tab
     Then I verify Funds are Displayed
     And I click on Fund Facts
@@ -370,11 +375,12 @@ Feature: Daily Production validaton
       
     Examples: 
       | Country  | Fundname |
-      | Hong Kong| AB All Market Income Portfolio |   
+      | Hong Kong| AB American Multi-Asset Portfolio |   
 
       
-  @HKProdValidation12   
-  Scenario Outline: Prod Validation for SG Fund Details Page   
+  @HKProd2   
+  @Prod
+  Scenario Outline: Prod Validation for HK Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
     And I wait in sec '10'
@@ -385,4 +391,60 @@ Feature: Daily Production validaton
     
     Examples: 
       | Country  | 
-      | Hong Kong|    
+      | Hong Kong|   
+      
+  @Prod
+  @prodHKC
+  Scenario Outline: Prod Validation for HK Fund Finder Page in Chinese   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I wait in sec '10'
+    And I Click on Yes Continue Btn
+    And I click on view all funds  
+    And I Click On Language DD 
+    And I Click On Chinese Language
+    And I wait in sec '10'
+    Then Validate all Funds 
+      
+    
+    Examples: 
+      | Country  | 
+      | Hong Kong|      
+      
+  @Prod
+  @HKCFF   
+  Scenario Outline: Prod Validation for HK Fund Finder Chinese Page   
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor 
+    And I wait in sec '10' 
+    And I Click on Yes Continue Btn
+    And I click on view all funds
+    And I Click On Language DD 
+    And I Click On Chinese Language
+    And I wait in sec '10'
+    When I click on Currencies DD
+    Then Verify Default Currencies for SG
+    When I click on Shareclass DD
+    Then Verify Default Shareclass For SG
+    When I click on Shareclass DD
+    And I click on Performance Tab
+    Then I verify Funds are Displayed
+    And I click on Fund Facts
+    Then I verify Funds are Displayed
+    And I click on Documents
+    Then I verify Funds are Displayed
+    And I click on DailyPricing Tab
+    Then I verify Funds are Displayed
+    Then I verify AS OF DATE for SG
+    And I search '<Fundname>' in FF page
+      
+    Examples: 
+      | Country  | Fundname |
+      | Hong Kong| 聯博－美國股債基金 |      
+      
+      
+      
+      
+      
+      
+      

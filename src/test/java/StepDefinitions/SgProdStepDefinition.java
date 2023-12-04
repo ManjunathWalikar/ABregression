@@ -117,6 +117,11 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_details_page.clickOnCalenderYearPerformance();
 	}
+	@When("^I click on Annual Performance$")
+	public void click_on_Annual_Performance()
+	{
+		po.sg_fund_details_page.clickOnAnnualPerformance();
+	}
 	@Then("^Validate Calender Year Performance Values for '(.*)'$")
 	public void verify_Calender_Year_Performance_data(String name)
 	{
@@ -166,11 +171,6 @@ public class SgProdStepDefinition {
 	public void Click_on_Unhedged()
 	{
 		po.sg_fund_details_page.clickOnUnhedged();
-	}
-	@When("^I Click On Annual Performance$")
-	public void Click_on_Annual_Performance()
-	{
-		po.sg_fund_details_page.clickOnAnnualPerformance();
 	}
 	
 }

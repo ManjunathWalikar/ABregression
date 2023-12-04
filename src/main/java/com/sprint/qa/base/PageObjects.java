@@ -1,5 +1,7 @@
 package com.sprint.qa.base;
 
+import com.sprint.qa.Pages.HkFundDetailsPage;
+import com.sprint.qa.Pages.HkFundFinderPage;
 import com.sprint.qa.Pages.HomePage;
 import com.sprint.qa.Pages.SgFundDetailsPage;
 import com.sprint.qa.Pages.SgFundFinderPage;
@@ -13,6 +15,8 @@ public class PageObjects {
 	public HomePage home_page;
 	public SgFundDetailsPage sg_fund_details_page;
 	public SgFundFinderPage sg_fund_finder_page;
+	public HkFundFinderPage hk_FF_Page;
+	public HkFundDetailsPage hk_FD_Page;
 
 	public PageObjects()
 	{
@@ -21,6 +25,8 @@ public class PageObjects {
 	home_page = new HomePage(TestBase.driver);
 	sg_fund_details_page = new SgFundDetailsPage(TestBase.driver);
 	sg_fund_finder_page = new SgFundFinderPage(TestBase.driver);
+	hk_FF_Page = new HkFundFinderPage(TestBase.driver);
+	hk_FD_Page = new HkFundDetailsPage(TestBase.driver);
 
 	}
 }
