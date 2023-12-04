@@ -326,6 +326,7 @@ Feature: Daily Production validaton
         
   @HKProdValidationFF  
   @Prod 
+  @HKCFD
   Scenario Outline: Prod Validation for HK Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor  
@@ -337,15 +338,15 @@ Feature: Daily Production validaton
     And I get Performance Value of HK '<Fundname>'
     And I click on Pricing and Performance
     And I click on Annual Performance
-    Then Validate Annual Performance Values
+    Then Validate Annual Performance Values for HK '<Fundname>'
     And I click on Performance Tab
     And I wait in sec '5'
     And I click on Calender Year Performance
-    Then Validate Calender Year Performance Values for '<Fundname>'
+    Then Validate Calender Year Performance Values for HK '<Fundname>'
     
     Examples: 
       | Country  | Fundname |
-      | Hong Kong| AB All Market Income Portfolio |  
+      | Hong Kong| AB China Low Volatility Equity Portfolio |  
       
       
   @HKProdValidation12
@@ -442,7 +443,31 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       | Hong Kong| 聯博－美國股債基金 |      
       
-      
+  @Prod
+  @HKCFD 
+  Scenario Outline: Prod Validation for HK Fund Details Page Chinese  
+    Given Navigate to '<Country>' site
+    When I Click on Individual Investor  
+    And I wait in sec '10'
+    And I Click on Yes Continue Btn
+    And I click on view all funds  
+    And I Click On Language DD 
+    And I Click On Chinese Language
+    And I wait in sec '10'
+    And I click on Performance Tab
+    And I wait in sec '10'
+    And I get Performance Value of HK '<Fundname>'
+    And I click on Pricing and Performance
+    And I click on Annual Performance
+    Then Validate Annual Performance Values for HK '<Fundname>'
+    And I click on Performance Tab
+    And I wait in sec '5'
+    And I click on Calender Year Performance
+    Then Validate Calender Year Performance Values for HK '<Fundname>'
+    
+    Examples: 
+      | Country  | Fundname |
+      | Hong Kong| 聯博－亞洲（日本以外）股票基金 |    
       
       
       

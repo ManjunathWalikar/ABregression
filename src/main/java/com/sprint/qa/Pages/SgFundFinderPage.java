@@ -34,8 +34,8 @@ public class SgFundFinderPage extends TestBase{
 	public static String DOCUMENTS_SG = "//*[contains(@id,'documents')]";
 	public static String NAV_AS_OF_DATE_SG = "//tbody//td[6]";
 	public static String FUND_SEARCH_SG = "//input[contains(@placeholder,'Fund Name')]|//input[contains(@placeholder,'搜尋基金名稱')]";
-	public static String ANNULIZED_DATA = "//label[contains(text(),'Annualized')]";
-	public static String CALENDER_DATA = "//label[contains(text(),'Calendar')]";
+	public static String ANNULIZED_DATA = "//label[contains(text(),'Annualized')]|//label[contains(text(),'年化')]";
+	public static String CALENDER_DATA = "//label[contains(text(),'Calendar')]|//label[contains(text(),'曆年')]";
 	public static String YTDvalue;
 	public static String OneYearValue;
 	public static String ThreeYearValue;

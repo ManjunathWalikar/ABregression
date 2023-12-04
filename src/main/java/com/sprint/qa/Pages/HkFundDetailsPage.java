@@ -34,13 +34,13 @@ public class HkFundDetailsPage extends TestBase {
 		System.out.println(FiveYear);
 		System.out.println(TenYear);
 		System.out.println(SinceInceptionData);
-		
-			Assert.assertTrue(YTD.contains(SgFundFinderPage.YTDvalue));
-			Assert.assertTrue(OneYear.contains(SgFundFinderPage.OneYearValue));
-			Assert.assertTrue(ThreeYear.contains(SgFundFinderPage.ThreeYearValue));
-			Assert.assertTrue(FiveYear.contains(SgFundFinderPage.FiveYearValue));
-			Assert.assertTrue(TenYear.contains(SgFundFinderPage.TenYearValue));
-			Assert.assertTrue(SinceInceptionData.contains(SgFundFinderPage.SinceInceptionValue));
+		Assert.assertTrue(YTD.contains(HkFundFinderPage.YTDvalue));
+			Assert.assertTrue(YTD.contains(HkFundFinderPage.YTDvalue));
+			Assert.assertTrue(OneYear.contains(HkFundFinderPage.OneYearValue));
+			Assert.assertTrue(ThreeYear.contains(HkFundFinderPage.ThreeYearValue));
+			Assert.assertTrue(FiveYear.contains(HkFundFinderPage.FiveYearValue));
+			Assert.assertTrue(TenYear.contains(HkFundFinderPage.TenYearValue));
+			Assert.assertTrue(SinceInceptionData.contains(HkFundFinderPage.SinceInceptionValue));
 	}
 	public void validateCalenderYearPerformanceData(String fundName) {
 		help.get_element("//td[contains(text(),'"+fundName+"')]").click();
@@ -51,12 +51,12 @@ public class HkFundDetailsPage extends TestBase {
 		String Calender2022 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[5]");
 		String CalenderYTD = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[6]");
 		
-		Assert.assertTrue(Calender2018.contains(SgFundFinderPage.DATA_2018));
-		Assert.assertTrue(Calender2019.contains(SgFundFinderPage.DATA_2019));
-		Assert.assertTrue(Calender2020.contains(SgFundFinderPage.DATA_2020));
-		Assert.assertTrue(Calender2021.contains(SgFundFinderPage.DATA_2021));
-		Assert.assertTrue(Calender2022.contains(SgFundFinderPage.DATA_2022));
-		Assert.assertTrue(CalenderYTD.contains(SgFundFinderPage.DATA_YTD));
+		Assert.assertTrue(Calender2018.contains(HkFundFinderPage.DATA_2018));
+		Assert.assertTrue(Calender2019.contains(HkFundFinderPage.DATA_2019));
+		Assert.assertTrue(Calender2020.contains(HkFundFinderPage.DATA_2020));
+		Assert.assertTrue(Calender2021.contains(HkFundFinderPage.DATA_2021));
+		Assert.assertTrue(Calender2022.contains(HkFundFinderPage.DATA_2022));
+		Assert.assertTrue(CalenderYTD.contains(HkFundFinderPage.DATA_YTD));
 		
 	}
 

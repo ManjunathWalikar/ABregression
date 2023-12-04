@@ -7,6 +7,7 @@ import com.sprint.qa.helper.Helper;
 import com.sprint.qa.helper.LoggerHelper;
 import com.sprint.qa.util.TestUtil;
 
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class HkProdStepDefinition {
@@ -34,6 +35,16 @@ public class HkProdStepDefinition {
 	public void chinese_language()
 	{
 		po.hk_FF_Page.clickOnChineseLanguage();
+	}
+	@Then("^Validate Annual Performance Values for HK '(.*)'$")
+	public void verify_Annual_Performance_data_HK(String fundName)
+	{
+		po.hk_FD_Page.validateAnnualPerformanceData(fundName);
+	}
+	@Then("^Validate Calender Year Performance Values for HK '(.*)'$")
+	public void verify_Calender_Year_Performance_data(String name)
+	{
+		po.hk_FD_Page.validateCalenderYearPerformanceData(name);
 	}
 
 }
