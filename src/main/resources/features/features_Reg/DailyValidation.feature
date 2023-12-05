@@ -469,7 +469,21 @@ Feature: Daily Production validaton
       | Country  | Fundname |
       | Hong Kong| 聯博－亞洲（日本以外）股票基金 |    
       
+  @Prod
+  @LUXFD
+  Scenario Outline: Prod Validation for LUX Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Institutional Investor  
+    And I Click on Yes Continue Btn
+    And I click on Funds
+    And I wait in sec '10'
+    And I click on DailyPricing Tab
+    Then Validate all Funds 
       
+    
+    Examples: 
+      | Country  | 
+      | Luxembourg and Other EMEA |    
       
-      
+    
       

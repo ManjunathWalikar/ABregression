@@ -74,11 +74,21 @@ public class Reg02_Hyperlinks_StepDefinition extends TestBase {
 	{
 		po.home_page.clickOnIndividualInvestor();
 	}
-	
+	@When("^I Click on Institutional Investor$")
+	public void click_on_Institutional_investor()
+	{
+		po.home_page.clickOnInstitutionalInvestor();
+	}
 	@And("^I click on Investment$")
 	public void click_on_investment()
 	{
 		po.home_page.clickOnInvestment();
+	}
+	
+	@And("^I click on Funds$")
+	public void click_on_Funds()
+	{
+		po.home_page.clickOnFundsLink();
 	}
 	
 	@And("^I click on Products$")

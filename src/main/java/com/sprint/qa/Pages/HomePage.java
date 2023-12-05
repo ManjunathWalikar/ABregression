@@ -15,10 +15,12 @@ public class HomePage extends TestBase {
 	
 	public static String CHOOSE_YOUR_SITE = "//div[@id='site-selector-trigger']";
 	public static String INDIVIDUAL_INVESTOR = "//button[contains(text(),'Individual Investors')]";
+	public static String INSTITUTIONAL_INVESTOR = "//button[contains(text(),'Institutional Investor')]";
 	public static String INVESTMENTS = "//span[contains(text(),'Investments ')]";
 	public static String PRODUCTS = "//div[contains(@class,'header')]//a[contains(text(),'Products')]";
 	public static String AcceptCookies = "//button[@id='onetrust-accept-btn-handler']";
 	public static String YES_CONTINUE_BTN = "//button[contains(text(),'Yes Continue')]";
+	public static String FUNDS_LINK = "//a[contains(text(),'Funds')]";
 	
 	public HomePage(WebDriver driver)
 	{
@@ -29,6 +31,14 @@ public class HomePage extends TestBase {
 	{
 		WebElement ele = help.get_element(CHOOSE_YOUR_SITE);
 		return ele;
+	}
+	
+	public WebElement getFundsLink() {
+		return help.get_element(FUNDS_LINK);
+	}
+	
+	public WebElement getInstitutionalInvestor() {
+		return help.get_element(INSTITUTIONAL_INVESTOR);
 	}
 	
 	public WebElement getIndividualInvestor()
@@ -58,9 +68,14 @@ public class HomePage extends TestBase {
 	 */
 	
 	public void clickOnYesContinueBtn() {
-		wait_element_tobe_displayed(getAcceptCookies());
 		try {
+			wait_element_tobe_displayed(getAcceptCookies());
 			getAcceptCookies().click();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		try {
+			wait_element_tobe_displayed(getYesContinueBtn());
 			getYesContinueBtn().click();
 		} catch (Exception e) {
 			scrollandclick(getYesContinueBtn());
@@ -90,6 +105,29 @@ public class HomePage extends TestBase {
 			e.printStackTrace();
 		}
 	}
+	
+	public void clickOnInstitutionalInvestor()
+	{
+		try {
+			Thread.sleep(5000);
+			wait_element_tobe_displayed(getInstitutionalInvestor());
+			getInstitutionalInvestor().click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public void clickOnFundsLink()
+	{
+		try {
+			Thread.sleep(5000);
+			wait_element_tobe_displayed(getFundsLink());
+			getFundsLink().click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public void clickOnInvestment()
 	{
 		try {
