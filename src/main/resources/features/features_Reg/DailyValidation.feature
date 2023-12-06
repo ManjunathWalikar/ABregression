@@ -2,6 +2,8 @@
 Feature: Daily Production validaton
 
   @Smoke
+  @Testing
+  @ProdUS
   Scenario Outline: Prod Validation for US
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -15,6 +17,7 @@ Feature: Daily Production validaton
       |United States|
       
   @ProdValidation
+  @ProdUS
   Scenario Outline: Prod Validation for US
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -33,6 +36,7 @@ Feature: Daily Production validaton
       
       
   @ETF
+  @ProdUS
   Scenario Outline: Prod Validation for US ETF Funds
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -47,6 +51,7 @@ Feature: Daily Production validaton
       
       
   @ProdValidation
+  @ProdUS
   Scenario Outline: US Fund Finder Page Validation
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -485,5 +490,31 @@ Feature: Daily Production validaton
       | Country  | 
       | Luxembourg and Other EMEA |    
       
-    
+  @Prod1
+  @HKFFLUX   
+  Scenario Outline: Prod Validation for LUX Fund Finder Page   
+    Given Navigate to '<Country>' site
+    When I Click on Institutional Investor  
+    And I Click on Yes Continue Btn
+    And I click on Funds
+    And I wait in sec '10'
+    When I click on Currencies DD
+    Then Verify Default Currencies for LUX
+    When I click on Shareclass DD
+    Then Verify Default Shareclass For LUX
+    When I click on Shareclass DD
+    And I click on Performance Tab
+    Then I verify Funds are Displayed
+    And I click on Fund Facts
+    Then I verify Funds are Displayed
+    And I click on Documents
+    Then I verify Funds are Displayed
+    And I click on DailyPricing Tab
+    Then I verify Funds are Displayed
+    Then I verify AS OF DATE for SG
+    And I search '<Fundname>' in FF page
+      
+    Examples: 
+      | Country  | Fundname |
+      | Luxembourg and Other EMEA | AB American Multi-Asset Portfolio |   
       

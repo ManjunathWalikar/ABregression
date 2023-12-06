@@ -459,16 +459,16 @@ public class UsFundFinderPage extends TestBase{
 	
 	public String getNAVdata(String fundName)
 	{
-		return help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]/../following-sibling::p[2]").getText();
+		return help.get_element("//a[contains(text(),'"+fundName+"')]/../following-sibling::p[2]").getText();
 	}
 	
 	public String getETFNAVdata(String fundName)
 	{
-		return help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]/../following-sibling::p[3]").getText();
+		return help.get_element("//a[contains(text(),'"+fundName+"')]/../following-sibling::p[3]").getText();
 	}
 	public void clickOnGivenFund(String fundName)
 	{
-		 help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+fundName+"')]").click();
+		 help.get_element("//a[contains(text(),'"+fundName+"')]").click();
 	}
 	
 	/**
@@ -488,7 +488,6 @@ public class UsFundFinderPage extends TestBase{
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {
 //			help.switchWindow(parent);
-			scrollintoview(fund);
 			String fundName = fund.getText();
 			String NAV_value = getNAVdata(fundName);
 			validateNAV(NAV_value);
@@ -508,7 +507,6 @@ public class UsFundFinderPage extends TestBase{
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {
 //			help.switchWindow(parent);
-			scrollintoview(fund);
 			String fundName = fund.getText();
 			fund.click();
 			help.switchWindowFDpage(fundName);
@@ -586,7 +584,6 @@ public class UsFundFinderPage extends TestBase{
 		String parent = driver.getWindowHandle();
 		WebElement fund = help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+FundName+"')]");
 //			help.switchWindow(parent);
-			scrollintoview(fund);
 			String NAV_value = getNAVdata(FundName);
 			fund.click();
 			help.switchWindowFDpage(FundName);
@@ -623,7 +620,6 @@ public class UsFundFinderPage extends TestBase{
 		List<WebElement> funds = help.get_elements(allFunds);
 		for (WebElement fund : funds) {
 //			help.switchWindow(parent);
-			scrollintoview(fund);
 			String fundName = fund.getText();
 			String NAV_value = getETFNAVdata(fundName);
 			fund.click();

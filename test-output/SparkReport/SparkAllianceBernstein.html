@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Subscriptions BDD Cucumber Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Dec 5, 2023 04:31:24 pm</span></a>
+<a href="#"><span class="badge badge-primary">Dec 6, 2023 06:32:02 pm</span></a>
 </li>
 </ul>
 </div>
@@ -66,13 +66,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Dec 5, 2023 04:31:24 pm</h3>
+<h3>Dec 6, 2023 06:32:02 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Dec 5, 2023 04:34:12 pm</h3>
+<h3>Dec 6, 2023 06:34:09 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -143,7 +143,7 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'><b>7</b> steps passed</small></div>
+<div><small data-tooltip='100%'><b>20</b> steps passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> steps failed,
 <b>0</b> skipped, <b data-tooltip='%'>0</b> others
@@ -162,7 +162,7 @@
 </div></div>
 <script>
 var timeline = {
-"Daily Production validaton":166.066
+"Daily Production validaton":125.503
 };
 </script>
 <div class="row">
@@ -172,14 +172,6 @@ var timeline = {
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
 <tr>
-<td>@Prod</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
 <td>@Regression</td>
 <td>1</td>
 <td>0</td>
@@ -188,7 +180,15 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
-<td>@LUXFD</td>
+<td>@Prod1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@HKFFLUX</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
@@ -215,7 +215,7 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 7,
+passGrandChild: 20,
 failGrandChild: 0,
 warningGrandChild: 0,
 skipGrandChild: 0,
@@ -240,7 +240,7 @@ eventsCount: 5,
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Prod</a><a class="dropdown-item" href="#">@Regression</a><a class="dropdown-item" href="#">@LUXFD</a>
+<a class="dropdown-item" href="#">@Regression</a><a class="dropdown-item" href="#">@Prod1</a><a class="dropdown-item" href="#">@HKFFLUX</a>
 </ul>
 </li>
 </ul>
@@ -253,7 +253,7 @@ eventsCount: 5,
           <div class="test-detail">
             <p class="name">Daily Production validaton</p>
             <p class="text-sm">
-              <span>4:31:26 pm</span> / <span>00:02:46:066</span>
+              <span>6:32:03 pm</span> / <span>00:02:05:503</span>
               <span class="badge pass-bg log float-right">Pass</span>
             </p>
           </div>
@@ -262,9 +262,9 @@ eventsCount: 5,
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-pass">Daily Production validaton</h5>
-<span class='badge badge-success'>12.05.2023 4:31:26 pm</span>
-<span class='badge badge-danger'>12.05.2023 4:34:12 pm</span>
-<span class='badge badge-default'>00:02:46:066</span>
+<span class='badge badge-success'>12.06.2023 6:32:03 pm</span>
+<span class='badge badge-danger'>12.06.2023 6:34:09 pm</span>
+<span class='badge badge-default'>00:02:05:503</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -276,14 +276,14 @@ eventsCount: 5,
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for LUX Fund Details Page</div>
+        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for LUX Fund Finder Page</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for LUX Fund Details Page</div>
+                  <div class="node" id="3"><span class="badge log pass-bg mr-2">Pass</span>Prod Validation for LUX Fund Finder Page</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -313,12 +313,77 @@ eventsCount: 5,
       </div>
                   </div>
                   <div class="step pass-bg">
+                    <span>When I click on Currencies DD</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Verify Default Currencies for LUX</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When I click on Shareclass DD</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then Verify Default Shareclass For LUX</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When I click on Shareclass DD</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click on Performance Tab</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I verify Funds are Displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click on Fund Facts</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I verify Funds are Displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I click on Documents</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I verify Funds are Displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
                     <span>And I click on DailyPricing Tab</span>
       <div>
       </div>
                   </div>
                   <div class="step pass-bg">
-                    <span>Then Validate all Funds</span>
+                    <span>Then I verify Funds are Displayed</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>Then I verify AS OF DATE for SG</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And I search 'AB American Multi-Asset Portfolio' in FF page</span>
       <div>
       </div>
                   </div>
@@ -351,42 +416,6 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@Prod</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Prod</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:31:26 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Details Page</a>
-<div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Details Page</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
 <p class="name">@Regression</p>
 <p class="duration text-sm">1 tests</p>
 </div>
@@ -406,11 +435,11 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:31:26 pm</td>
+<td>18:32:03 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Details Page</a>
+<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Finder Page</a>
 <div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Details Page</span>
+<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Finder Page</span>
 </div>
 </td>
 </tr>
@@ -423,12 +452,12 @@ eventsCount: 5,
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@LUXFD</p>
+<p class="name">@Prod1</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>@LUXFD</h4>
+<h4>@Prod1</h4>
 <span status="pass" class='badge log pass-bg'>1 passed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -442,11 +471,47 @@ eventsCount: 5,
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:31:26 pm</td>
+<td>18:32:03 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Details Page</a>
+<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Finder Page</a>
 <div class="">
-<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Details Page</span>
+<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Finder Page</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@HKFFLUX</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@HKFFLUX</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>18:32:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Prod Validation for LUX Fund Finder Page</a>
+<div class="">
+<span class="badge badge-default">Daily Production validaton.Prod Validation for LUX Fund Finder Page</span>
 </div>
 </td>
 </tr>

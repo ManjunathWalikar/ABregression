@@ -28,6 +28,7 @@ public class SgFundFinderPage extends TestBase{
 	public static String SHARECLASS_ACCUMULATING = "//input[contains(@id,'DividendFrequency/Accumulating') and @checked]";
 	public static String SHARECLASS_DISTRIBUTING = "//input[contains(@id,'DividendFrequency/Distributing') and @checked]";
 	public static String SHARECLASS_A = "//input[contains(@id,'ShareClass/A') and @checked]";
+	public static String SHARECLASS_I = "//input[contains(@id,'ShareClass/I') and @checked]";
 	public static String DAILYPRICING_SG = "//*[contains(@id,'dailyPricing')]";
 	public static String PERFORMANCE_SG = "//*[contains(@id,'Performance')]";
 	public static String FUNDFACTS_SG = "//*[contains(@id,'fundFacts')]";
@@ -85,6 +86,9 @@ public class SgFundFinderPage extends TestBase{
 	}
 	public WebElement getShareclassA() {
 		return help.get_element(SHARECLASS_A);
+	}
+	public WebElement getShareclassI() {
+		return help.get_element(SHARECLASS_I);
 	}
 	public WebElement getPerformanceSG() {
 		return help.get_element(PERFORMANCE_SG);
@@ -171,6 +175,9 @@ public class SgFundFinderPage extends TestBase{
 		validateCurrenciesUSD();
 		validateBaseCurrencies();
 	}
+	public void VerifyDefaultCurrenciesLUX() {
+		validateBaseCurrencies();
+	}
 	public void VerifyDefaultShareclassSelected() {
 		validateShareclassAccumulating();
 		validateShareclassA();
@@ -179,6 +186,10 @@ public class SgFundFinderPage extends TestBase{
 		} catch (Exception e) {
 			
 		}
+	}
+	public void VerifyDefaultShareclassLUX() {
+		validateShareclassAccumulating();
+		validateShareclassI();
 	}
 	
 	public void validateCurrenciesCNH() {
@@ -204,6 +215,9 @@ public class SgFundFinderPage extends TestBase{
 	}
 	public void validateShareclassA() {
 		Assert.assertTrue(getShareclassA().isEnabled());
+	}
+	public void validateShareclassI() {
+		Assert.assertTrue(getShareclassI().isEnabled());
 	}
 	public void clickOnPerformanceTab() {
 		getPerformanceSG().click();

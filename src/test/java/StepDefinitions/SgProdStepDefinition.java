@@ -41,6 +41,11 @@ public class SgProdStepDefinition {
 	{
 		po.sg_fund_finder_page.VerifyDefaultCurrenciesSelected();
 	}
+	@Then("^Verify Default Currencies for LUX$")
+	public void Verify_Default_Currencies_LUX()
+	{
+		po.sg_fund_finder_page.VerifyDefaultCurrenciesLUX();
+	}
 	@When("^I click on Shareclass DD$")
 	public void click_on_Shareclass_DD()
 	{
@@ -50,6 +55,11 @@ public class SgProdStepDefinition {
 	public void Verify_Default_Shareclass()
 	{
 		po.sg_fund_finder_page.VerifyDefaultShareclassSelected();
+	}
+	@Then("^Verify Default Shareclass For LUX$")
+	public void Verify_Default_Shareclass_LUX()
+	{
+		po.sg_fund_finder_page.VerifyDefaultShareclassLUX();
 	}
 	@When("^I click on Performance Tab$")
 	public void click_on_Performance()
