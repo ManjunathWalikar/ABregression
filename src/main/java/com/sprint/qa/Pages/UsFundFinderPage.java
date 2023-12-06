@@ -435,7 +435,6 @@ public class UsFundFinderPage extends TestBase{
 		WebElement mfv = help.get_element(MutualFundVehicle);
 		scrollintoview(mfv);
 		WebElement dpy =help.get_element(Daily_Pricing_and_Yields);
-		scrollintoview(dpy);
 		dpy.click();
 	}
 	
@@ -582,7 +581,7 @@ public class UsFundFinderPage extends TestBase{
 	{
 		String as_Of_date = getAsOfDate();
 		String parent = driver.getWindowHandle();
-		WebElement fund = help.get_element("//tbody[contains(@class,'Table_table-rows-container')]//a[contains(text(),'"+FundName+"')]");
+		WebElement fund = help.get_element("//a[contains(text(),'"+FundName+"')]");
 //			help.switchWindow(parent);
 			String NAV_value = getNAVdata(FundName);
 			fund.click();
