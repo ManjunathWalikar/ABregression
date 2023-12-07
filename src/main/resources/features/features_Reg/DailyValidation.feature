@@ -52,6 +52,7 @@ Feature: Daily Production validaton
       
   @ProdValidation
   @ProdUS
+  @Testing1
   Scenario Outline: US Fund Finder Page Validation
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -166,7 +167,8 @@ Feature: Daily Production validaton
       |United States|    
       
       
-  @ProdValidation   
+  @ProdValidation 
+  @Testing1  
   Scenario Outline: Prod Validation for US Fund Details Page   
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -191,6 +193,7 @@ Feature: Daily Production validaton
       
       
   @ProdValidation
+  @Testing1
   Scenario Outline: US Mutual Fund Details Page Validation
     Given Navigate to '<Country>' site
     When I Click on Individual Investor
@@ -490,8 +493,8 @@ Feature: Daily Production validaton
       | Country  | 
       | Luxembourg and Other EMEA |    
       
-  @Prod1
-  @HKFFLUX   
+  @Prod
+  @FFLUX   
   Scenario Outline: Prod Validation for LUX Fund Finder Page   
     Given Navigate to '<Country>' site
     When I Click on Institutional Investor  
@@ -516,5 +519,29 @@ Feature: Daily Production validaton
       
     Examples: 
       | Country  | Fundname |
-      | Luxembourg and Other EMEA | AB American Multi-Asset Portfolio |   
+      | Luxembourg and Other EMEA | AB American Multi-Asset Portfolio |  
+      
+      
+  @Prod
+  @LUXFDP 
+  Scenario Outline: Prod Validation for LUX Fund Details Page   
+    Given Navigate to '<Country>' site
+    When I Click on Institutional Investor  
+    And I Click on Yes Continue Btn
+    And I click on Funds
+    And I wait in sec '10'
+    And I click on Performance Tab
+    And I wait in sec '10'
+    And I get Performance Value of LUX '<Fundname>'
+    And I click on Pricing and Performance
+    And I click on Annual Performance
+    Then Validate Annual Performance Values for LUX '<Fundname>'
+    And I click on Performance Tab
+    And I wait in sec '5'
+    And I click on Calender Year Performance
+    Then Validate Calender Year Performance Values for LUX '<Fundname>'
+    
+    Examples: 
+      | Country  | Fundname |
+      | Luxembourg and Other EMEA| AB American Growth Portfolio |  
       

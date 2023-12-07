@@ -59,5 +59,41 @@ public class HkFundDetailsPage extends TestBase {
 		Assert.assertTrue(CalenderYTD.contains(HkFundFinderPage.DATA_YTD));
 		
 	}
+	public void validateAnnualPerformanceDataLUX(String fundName) {
+		help.get_element("//td[contains(text(),'"+fundName+"')]").click();
+		String OneYear = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[1]");
+		String ThreeYear = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[2]");
+		String FiveYear = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[3]");
+		String TenYear = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[4]");
+		String SinceInceptionData = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[5]");
+		
+		System.out.println(OneYear);
+		System.out.println(ThreeYear);
+		System.out.println(FiveYear);
+		System.out.println(TenYear);
+		System.out.println(SinceInceptionData);
+			Assert.assertTrue(OneYear.contains(HkFundFinderPage.OneYearValue));
+			Assert.assertTrue(ThreeYear.contains(HkFundFinderPage.ThreeYearValue));
+			Assert.assertTrue(FiveYear.contains(HkFundFinderPage.FiveYearValue));
+			Assert.assertTrue(TenYear.contains(HkFundFinderPage.TenYearValue));
+			Assert.assertTrue(SinceInceptionData.contains(HkFundFinderPage.SinceInceptionValue));
+	}
+	public void validateCalenderYearPerformanceDataLUX(String fundName) {
+		help.get_element("//td[contains(text(),'"+fundName+"')]").click();
+		String Calender2018 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[6]");
+		String Calender2019 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[7]");
+		String Calender2020 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[8]");
+		String Calender2021 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[9]");
+		String Calender2022 = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[10]");
+		String CalenderYTD = help.get_element_text("//td[contains(text(),'"+fundName+"')]/following-sibling::td[11]");
+		
+		Assert.assertTrue(Calender2018.contains(HkFundFinderPage.DATA_2018));
+		Assert.assertTrue(Calender2019.contains(HkFundFinderPage.DATA_2019));
+		Assert.assertTrue(Calender2020.contains(HkFundFinderPage.DATA_2020));
+		Assert.assertTrue(Calender2021.contains(HkFundFinderPage.DATA_2021));
+		Assert.assertTrue(Calender2022.contains(HkFundFinderPage.DATA_2022));
+		Assert.assertTrue(CalenderYTD.contains(HkFundFinderPage.DATA_YTD));
+		
+	}
 
 }

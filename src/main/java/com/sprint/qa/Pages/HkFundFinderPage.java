@@ -90,5 +90,43 @@ public class HkFundFinderPage extends TestBase {
 		
 		
 	}
+	public void validateIndividualFundsLUX(String fundName) {
+		page.sg_fund_finder_page.clickOnAnnulizedData();
+		wait_element_tobe_clickable("//a[contains(text(),'"+fundName+"')]");
+		
+		OneYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[4]");
+		ThreeYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[5]");
+		FiveYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[6]");
+		TenYearValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[7]");
+		SinceInceptionValue = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[8]");
+		INCEPTION_DATE = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[9]");
+		
+		System.out.println(OneYearValue);
+		System.out.println(ThreeYearValue);
+		System.out.println(FiveYearValue);
+		System.out.println(TenYearValue);
+		System.out.println(SinceInceptionValue);
+		System.out.println(INCEPTION_DATE);
+		
+		page.sg_fund_finder_page.clickOnCalenderData();
+		wait_element_tobe_clickable("//a[contains(text(),'"+fundName+"')]");
+		DATA_2018 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[4]");
+		DATA_2019 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[5]");
+		DATA_2020 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[6]");
+		DATA_2021 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[7]");
+		DATA_2022 = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[8]");
+		DATA_YTD = help.get_element_text("//a[contains(text(),'"+fundName+"')]/ancestor::td/following-sibling::td[9]");
+		
+		System.out.println(DATA_2018);
+		System.out.println(DATA_2019);
+		System.out.println(DATA_2020);
+		System.out.println(DATA_2021);
+		System.out.println(DATA_2022);
+		System.out.println(DATA_YTD);
+		
+		help.get_element("//a[contains(text(),'"+fundName+"')]").click();
+		
+		
+	}
 
 }

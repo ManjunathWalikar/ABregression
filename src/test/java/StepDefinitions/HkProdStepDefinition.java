@@ -26,6 +26,12 @@ public class HkProdStepDefinition {
 	{
 		po.hk_FF_Page.validateIndividualFunds(fundname);
 	}
+	@When("^I get Performance Value of LUX '(.*)'$")
+	public void annual_Performance_Value_LUX(String fundname)
+	{
+		po.hk_FF_Page.validateIndividualFundsLUX(fundname);
+	}
+	
 	@When("^I Click On Language DD$")
 	public void language_DD()
 	{
@@ -45,6 +51,16 @@ public class HkProdStepDefinition {
 	public void verify_Calender_Year_Performance_data(String name)
 	{
 		po.hk_FD_Page.validateCalenderYearPerformanceData(name);
+	}
+	@Then("^Validate Annual Performance Values for LUX '(.*)'$")
+	public void verify_Annual_Performance_data_LUX(String fundName)
+	{
+		po.hk_FD_Page.validateAnnualPerformanceDataLUX(fundName);
+	}
+	@Then("^Validate Calender Year Performance Values for LUX '(.*)'$")
+	public void verify_Calender_Year_Performance_dataLUX(String name)
+	{
+		po.hk_FD_Page.validateCalenderYearPerformanceDataLUX(name);
 	}
 
 }
